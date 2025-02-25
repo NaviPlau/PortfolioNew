@@ -1,0 +1,9 @@
+@use "../shared/styles/mixins" as *;
+
+section{
+  height: 100vh;
+  @include display(flex, column, center, center);
+  background-color: #F8F7E5;
+  width: 100%;
+  max-width: 100vw;
+}
