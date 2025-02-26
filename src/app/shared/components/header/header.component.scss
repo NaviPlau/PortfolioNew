@@ -1,100 +1,36 @@
 @use '../../../shared/styles/mixins' as *;
-
-header {
-  position: fixed;
-  top: 0;
-  right: 0px;
-  width: 100%; 
+@use '../../../shared/styles/shared-svg.scss' as *;
+.header{
   max-width: 1440px;
-  @include display(flex, row, flex-end, center);
-
-  mat-icon{
-    cursor: pointer;
-    font-size: 30px;
-
-  }
-}
-
-.header-wrapper {
   width: 100%;
-  max-width: 1440px;
-  position: fixed; 
+  margin: 0 auto;
+  @include display(flex, row, flex-start, center);
+  position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%); 
-  margin: 0 auto;
+  transform: translateX(-50%);
 }
 
-
-nav {
-  position: fixed;
-  top: 20px;
-  right: 0;
-  width: 100%;
-  max-width: 200px;
-  height: fit-content;
-  background-color: #f7f6eb;
-  @include display(flex, column, center, flex-start);
-  padding: 16px; 
-  z-index: 1000;
-  border: 2px solid black;
-  border-radius: 5px;
-
-}
-
-
-
-.nav-title {
-  width: 100%;
-  @include display(flex, row, space-between, center);
-  margin-bottom: 10px;
-  span{
-    font-size: 20px;
-    font-weight: bold;
-    color: #89BCD9 ;
-  }
-  mat-icon{
-    transform-origin: center;
-    height: auto;
-    width: auto;
-    font-size: 24px;
-    &:hover{
-      cursor: pointer;
-      color: #89BCD9;
-      transition: 300ms ease-in-out;
-      rotate: 2000deg;
-      scale: 1.4;
-     
-    }
+.icon{
+  font-size: 40px;
+  height: auto;
+  width: auto;
+  &:hover{
+    cursor: pointer;
+    transition: ease-in-out 300ms;
   }
 }
 
-.menu-icon {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  font-size: 30px;
-  cursor: pointer;
-  z-index: 1000;
+.light{
+  color: $blues;
+  &:hover{
+    color: $red-hover;
+  }
 }
 
-.link-wrapper {
-  width: fit-content;
-  @include display(flex, row, flex-start, center);
-  gap: 10px;
-  cursor: pointer;
-  transition: 125ms;
-  padding: 5px 0px;
-  mat-icon{
-    font-size: 20px;
-    height: auto;
-    width: auto;
-
-  }
-  a{
-    font-size: 20px;
-    text-decoration: none;
-    color: black;
-    transition: 125ms;
+.dark{
+  color: white;
+  &:hover{
+    color: $blues;  
   }
 }

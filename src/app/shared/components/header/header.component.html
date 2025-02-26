@@ -1,27 +1,12 @@
-<div class="header-wrapper">
-  <header>
-
-    <mat-icon class="menu-icon" (click)="menuHidden = !menuHidden">menu</mat-icon>
-
-    @if(!menuHidden){
-    <nav [appClickOutside]="closeMenu" [@fadeAnimation] >
-      <div class="nav-title">
-        <span>Menu</span>
-        <mat-icon (click)="menuHidden = !menuHidden">close</mat-icon>
-      </div>
-      @for (link of links; track $index) {
-      <div (mouseenter)="hoveredIndex = $index" (mouseleave)="hoveredIndex = -1" class="link-wrapper">
-        <mat-icon *ngIf="hoveredIndex === $index" [@swipeAnimation] [ngStyle]="{ color: getSwipeColor()}"
-          class="swipe-icon">
-          {{ getSwipeIcon() }}
-        </mat-icon>
-        <a href="#" [ngStyle]="{ color: hoveredIndex === $index ? '#89BCD9' : 'inherit', 'font-weight': hoveredIndex === $index ? '600' : 'inherit' }">
-          {{ link }}
-        </a>
-      </div>
-      }
-    </nav>
-    }
-
-  </header>
+<div class="header">
+  <app-hero-github></app-hero-github>
+  <app-hero-email></app-hero-email>
+  <app-hero-linked></app-hero-linked>
+  @if(lightmodus.light()){
+    <mat-icon class="light icon" (click)="lightmodus.toggle()">dark_mode</mat-icon>
+    
+  }@else {
+    <mat-icon class="dark icon" (click)="lightmodus.toggle()">wb_sunny</mat-icon>
+  }
+  
 </div>

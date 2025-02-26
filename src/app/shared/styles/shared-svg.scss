@@ -1,0 +1,72 @@
+$blue-hover: #89BCD9;
+$red-hover: #D95A5A;
+
+
+.light-mode {
+  path {
+    fill: $blue-hover;
+    stroke: $blue-hover;
+  }
+
+  rect{
+    stroke:$blue-hover
+  }
+  
+  &:hover  {
+    
+    cursor: pointer;
+    path{
+      fill: $red-hover;
+      stroke: $red-hover;
+      transition: 300ms ease-in-out ;
+    }
+
+    rect{
+      transition: 300ms ease-in-out ;
+      stroke: #D95A5A;
+    }
+    
+  }
+}
+
+.dark-mode{
+  &:hover  {
+    cursor: pointer;
+    path{
+      transition: 300ms ease-in-out ;
+      animation: changefillcolor 3s infinite;
+    }
+
+    rect{
+      transition: 300ms ease-in-out ;
+      animation: changeStrokeColor 3s infinite;
+    }
+    
+  }
+}
+
+
+@keyframes changefillcolor{
+  0%{
+    fill: $blue-hover
+  }
+  50%{
+    fill: $red-hover
+  }
+  100%{
+    fill: $blue-hover
+  }
+}
+
+@keyframes changeStrokeColor{
+  0%{
+    stroke: $blue-hover;
+  }
+  50%{
+    stroke: $red-hover
+  }
+  100%{
+    stroke: $blue-hover;
+  }
+}
+
