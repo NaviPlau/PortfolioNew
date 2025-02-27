@@ -1,72 +1,96 @@
-$blue-hover: #89BCD9;
-$red-hover: #D95A5A;
+@use '../styles/mixins' as *;
 
+.dark-mode {
+  
+  &:hover {
+    cursor: pointer;
+    path{
+      animation: fillUpDark 3s ease-in-out infinite;
+    }
+    
+    rect{
+      animation: heightRectDark 3s ease-in-out infinite;
+      fill: $dark-hover;
+    }
+  }
+}
 
 .light-mode {
-  path {
-    fill: $blue-hover;
-    stroke: $blue-hover;
-  }
-
   rect{
-    stroke:$blue-hover
+    stroke: black;
   }
-  
-  &:hover  {
-    
+
+  path{
+    fill: black;
+  }
+  &:hover {
     cursor: pointer;
     path{
-      fill: $red-hover;
-      stroke: $red-hover;
-      transition: 300ms ease-in-out ;
-    }
-
-    rect{
-      transition: 300ms ease-in-out ;
-      stroke: #D95A5A;
+      animation: fillUpLight 3s ease-in-out infinite;
     }
     
-  }
-}
-
-.dark-mode{
-  &:hover  {
-    cursor: pointer;
-    path{
-      transition: 300ms ease-in-out ;
-      animation: changefillcolor 3s infinite;
-    }
-
     rect{
-      transition: 300ms ease-in-out ;
-      animation: changeStrokeColor 3s infinite;
+      animation: heightRectLight 3s ease-in-out infinite;
+      fill: $light-hover;
     }
-    
+  }
+    }
+
+@keyframes fillUpDark {
+  0%, 100% {
+    fill: white;
+    opacity: 0;
+  }
+  50% {
+    fill: white;
+    opacity: 1;
   }
 }
 
 
-@keyframes changefillcolor{
+@keyframes heightRectDark{
   0%{
-    fill: $blue-hover
+    clip-path: inset(100% 0 0 0);
+    color: $dark-hover;
+    stroke: $dark-hover;
   }
   50%{
-    fill: $red-hover
+    clip-path: inset(0 0 0 0);
+    color: $dark-normal;
+    stroke: $dark-normal;
   }
   100%{
-    fill: $blue-hover
+    clip-path: inset(100% 0 0 0);
+    stroke: $dark-hover;
+
   }
 }
 
-@keyframes changeStrokeColor{
+@keyframes fillUpLight {
+  0%, 100% {
+    fill: $light-hover;
+    opacity: 0;
+  }
+  50% {
+    fill: black;
+    opacity: 1;
+  }
+}
+
+@keyframes heightRectLight{
   0%{
-    stroke: $blue-hover;
+    clip-path: inset(100% 0 0 0);
+    color: $light-normal;
+    stroke: $light-normal;
   }
   50%{
-    stroke: $red-hover
+    clip-path: inset(0 0 0 0); 
+    color: $light-normal;
+    stroke: $light-normal;
   }
   100%{
-    stroke: $blue-hover;
+    clip-path: inset(100% 0 0 0);
+    stroke: $light-normal;
   }
 }
 

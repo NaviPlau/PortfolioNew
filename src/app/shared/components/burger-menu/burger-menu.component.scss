@@ -33,7 +33,7 @@ nav {
   width: 100%;
   max-width: 200px;
   height: fit-content;
-  background-color: #f7f6eb;
+  background-color: $light-background;
   @include display(flex, column, center, flex-start);
   padding: 16px; 
   z-index: 1000;
@@ -97,4 +97,12 @@ nav {
     color: black;
     transition: 125ms;
   }
+}
+
+.light{
+  color: black;
+}
+
+.dark{
+  color : $dark-normal
 }

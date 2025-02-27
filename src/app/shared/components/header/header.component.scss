@@ -4,15 +4,23 @@
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-  @include display(flex, row, flex-start, center);
+  @include display(flex, row, space-between, center);
   position: absolute;
+  text-align: center;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  padding-top: 20px;
+}
+
+.icons{
+  @include display(flex, row, center, center);
+  gap: 10px;
+  padding-left: 20px;
 }
 
 .icon{
-  font-size: 40px;
+  font-size: 30px;
   height: auto;
   width: auto;
   &:hover{
@@ -22,15 +30,59 @@
 }
 
 .light{
-  color: $blues;
+  color: black;
+  outline: 0.9px solid black;
+  border-radius: 100%;
   &:hover{
-    color: $red-hover;
+    animation: colorPulseLight 3s ease-in-out infinite;
   }
 }
 
 .dark{
   color: white;
+  outline: white 0.9px solid;
+  border-radius: 100%;
   &:hover{
-    color: $blues;  
+    animation: colorPulseDark 3s ease-in-out infinite;  
   }
+}
+
+@keyframes colorPulseDark {
+  0%, 100% {
+    color: $dark-normal;
+    outline: 0.9px solid white;
+    opacity: 1;
+  }
+  50% {
+    color: white;
+    outline: 0.9px solid $dark-normal;
+    opacity: 0.7;
+  }
+}
+
+@keyframes colorPulseLight {
+  0%, 100% {
+    color: black;
+    opacity: 1;
+    outline: 0.9px solid black
+  }
+  50% {
+    color: $light-hover;
+    opacity: 0.7;
+    outline: 0.9px solid $light-hover
+  }
+}
+
+
+.svg{
+  display: block;
+  height: 32px;
+  width: 32px;
+}
+
+app-logo{
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate( -50%);
 }

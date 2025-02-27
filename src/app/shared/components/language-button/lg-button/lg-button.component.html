@@ -1,0 +1,7 @@
+<div (click)="lang.toggleLanguage()" [ngClass]="lightmodus.light() ? 'light' : 'dark'">
+    @if(language === 'de'){
+      <span>DE</span>
+    }@else {
+      <span>EN</span>
+    }
+</div>

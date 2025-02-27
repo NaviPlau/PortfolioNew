@@ -1,0 +1,63 @@
+@use "../../../styles/mixins" as *;
+
+div{
+  @include position(absolute, null, null, 20px, 50%);
+  @include display(flex, row, center, center);
+  transform: translate(-50%, 20px);
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  font-family: 'hero';
+  &:hover{
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+}
+
+.light{
+  color: black;
+  border: 1px solid black;
+  &:hover{
+    color: black;
+    animation: fillUpLight 3s ease-in-out infinite;
+  }
+}
+
+
+.dark{
+  color: $dark-normal;
+  border: 1px solid $dark-normal;
+  &:hover{
+    color: white;
+    animation: fillUpDark 3s ease-in-out infinite;
+    
+  }
+}
+
+
+@keyframes fillUpDark {
+  0% {
+    background-color: $dark-normal;
+  }
+  50% {
+    background-color: $dark-hover;
+  }
+  100% {
+    background-color: $dark-normal;
+  }
+}
+
+@keyframes fillUpLight {
+  0% {
+    background-color: transparent;
+    border: black solid 1px;
+  }
+  50% {
+    border: transparent solid 1px;
+    background-color: $light-hover;
+  }
+  100% {
+    border: black solid 1px;
+    background-color: transparent;
+  }
+}

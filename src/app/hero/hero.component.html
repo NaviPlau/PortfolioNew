@@ -1,6 +1,18 @@
-<section [ngStyle]="{'background-color': lightmodus.light() ? '#F8F7E5' : '#1E1E1E'}">
+<section [ngClass]="lightmodus.light() ? 'light' : 'dark'">
   <div>
-    <h1>Hi, I'm <span>Paul Ivan</span></h1>
-    <p>Frontend Developer</p>
+    <h1>
+      <span *ngFor="let letter of titleChars(); let i = index" 
+            class="letter" 
+            >
+        {{ letter }}
+      </span>
+    </h1>
+    <h2>
+      <span *ngFor="let letter of subtitleChars(); let i = index" 
+            class="letter" >
+        {{ letter }}
+      </span>
+    </h2>
   </div>
+
 </section>

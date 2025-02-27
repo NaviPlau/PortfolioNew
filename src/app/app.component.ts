@@ -5,6 +5,7 @@ import { BurgerMenuComponent } from "./shared/components/burger-menu/burger-menu
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, HeaderComponent, BurgerMenuComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

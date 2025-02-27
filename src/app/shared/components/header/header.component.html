@@ -1,12 +1,23 @@
 <div class="header">
-  <app-hero-github></app-hero-github>
-  <app-hero-email></app-hero-email>
-  <app-hero-linked></app-hero-linked>
-  @if(lightmodus.light()){
-    <mat-icon class="light icon" (click)="lightmodus.toggle()">dark_mode</mat-icon>
+  <div class="icons">
+    <app-hero-github class="svg"></app-hero-github>
+    <app-hero-email class="svg"></app-hero-email>
+    <app-hero-linked class="svg"></app-hero-linked>
+    @if(lightmodus.light()){
+      <mat-icon class="light icon" (click)="lightmodus.toggle()">dark_mode</mat-icon>
     
-  }@else {
-    <mat-icon class="dark icon" (click)="lightmodus.toggle()">wb_sunny</mat-icon>
-  }
+      }@else {
+      <mat-icon class="dark icon" (click)="lightmodus.toggle()">light_mode</mat-icon>
+      }
+  </div>
+
   
+  <app-lg-button></app-lg-button>
+
+  
+
+  <div style="color: transparent;">...</div>
+
+  
+
 </div>

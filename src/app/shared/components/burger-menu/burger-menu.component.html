@@ -1,7 +1,7 @@
 <div class="header-wrapper">
   <header>
 
-    <mat-icon class="menu-icon" (click)="menuHidden = !menuHidden">menu</mat-icon>
+    <mat-icon class="menu-icon" [ngClass]="lightmodus.light() ? 'light' : 'dark'" (click)="menuHidden = !menuHidden">menu</mat-icon>
 
     @if(!menuHidden){
     <nav [appClickOutside]="closeMenu" [@fadeAnimation] >

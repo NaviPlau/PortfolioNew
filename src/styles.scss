@@ -1,5 +1,11 @@
 @use "app/shared/styles/mixins" as *;
 
+
+@font-face {
+  font-family: "hero";
+  src: url('../public/fonts/Eczar-Regular.ttf') format('truetype');
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -8,12 +14,6 @@
 
 body{
   height: 100vh;
+  
 }
 
-
-
-
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

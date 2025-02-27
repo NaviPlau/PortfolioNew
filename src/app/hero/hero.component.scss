@@ -3,7 +3,38 @@
 section{
   height: 100vh;
   @include display(flex, column, center, center);
-  background-color: #F8F7E5;
   width: 100%;
   max-width: 100vw;
+  font-family: 'hero', serif;
+  text-align: center;
+}
+
+h1{
+  font-size: 128px;
+}
+
+h2{
+  font-size: 64px;
+}
+
+.light{
+  background-color: $light-background;
+  color: black
+}
+
+.dark{
+  background-color: $dark-background;
+  color: white;
+}
+
+
+
+.letter {
+  display: inline-block;
+  transition: color 20ms ease-in-out, text-transform 20ms ease-in-out;
+}
+
+.letter:hover {
+  color: $dark-normal; 
+  text-transform: uppercase;
 }

@@ -5,13 +5,14 @@ import { HeroEmailComponent } from "../../svg/hero-email/hero-email.component";
 import { HeroLinkedComponent } from "../../svg/hero-linked/hero-linked.component";
 import { MatIcon } from '@angular/material/icon';
 import { LightDarkService } from '../../services/lightmodus/light-dark.service';
+import { LgButtonComponent } from "../language-button/lg-button/lg-button.component";
 
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, HeroGithubComponent, HeroEmailComponent, HeroLinkedComponent, MatIcon],
+  imports: [CommonModule, HeroGithubComponent, HeroEmailComponent, HeroLinkedComponent, MatIcon, LgButtonComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
