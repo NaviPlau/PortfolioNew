@@ -1,9 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { trigger, transition, style, animate, keyframes } from '@angular/animations';
 import { ClickOutsideDirective } from '../../directives/click-outside.directive';
 import { CommonModule } from '@angular/common';
 import { LightDarkService } from '../../services/lightmodus/light-dark.service';
+import { LangService } from '../../services/language/lang.service';
 @Component({
   selector: 'app-burger-menu',
   standalone: true,
@@ -40,13 +41,17 @@ import { LightDarkService } from '../../services/lightmodus/light-dark.service';
 })
 export class BurgerMenuComponent {
   menuHidden = true;
-  links = ['About me', 'Skillset', 'Projects', 'References', 'Contact'];
+  links = computed(() =>
+    this.lang.language() === 'de'
+      ? ['Über mich', 'Fähigkeiten', 'Projekte', 'Referenzen', 'Kontakt']
+      : ['About me', 'Skillset', 'Projects', 'References', 'Contact']
+  );
   hoveredIndex: number = -1;
   swipeDirectionIndex: number = 0;
   swipeDirections = ['up', 'left', 'right', 'down']; 
   colors = ['#FFEEEE', '#FFB3B3', '#FF6666', '#D62C2C']; 
   lightmodus = inject(LightDarkService);
-
+  lang = inject(LangService);
 
   ngOnInit() {
     setInterval(() => {

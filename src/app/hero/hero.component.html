@@ -1,18 +1,34 @@
 <section [ngClass]="lightmodus.light() ? 'light' : 'dark'">
-  <div>
-    <h1>
-      <span *ngFor="let letter of titleChars(); let i = index" 
-            class="letter" 
-            >
-        {{ letter }}
-      </span>
-    </h1>
-    <h2>
-      <span *ngFor="let letter of subtitleChars(); let i = index" 
-            class="letter" >
-        {{ letter }}
-      </span>
-    </h2>
-  </div>
+  <div class="content">
+    <div class="title">
+      <h1 aria-label="Paul Ivan">
+        @for(letter of titleChars(); track $index){
+        <span [style.--i]="$index" class="letter" [ngClass]="lightmodus.light() ? 'light-lupe' : 'dark-lupe'">{{ letter
+          === ' ' ? '&nbsp;' :
+          letter }}</span>
+        }
+      </h1>
+      <h2 aria-label="Fullstack Developer">
+        @for(letter of subtitleChars(); track $index){
+        <span class="letter" [style.--i]="$index" [ngClass]="lightmodus.light() ? 'light-lupe' : 'dark-lupe'">{{ letter
+          === ' ' ? '&nbsp;' :
+          letter }}</span>
+        }
+      </h2>
+    </div>
+    <div class="button-wrapper">
+      <mat-icon [style.color]="iconColor()" [@wavingAnimation]="animationState()">
+        waving_hand
+      </mat-icon>
 
+      <button [attr.aria-label]="lang.language() === 'de' ? 'Kontaktieren Sie mich' : 'Contact Me'" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="onButtonClick()"
+        [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'">
+        @if(lang.language() === 'de') {
+         <span>Kontaktieren Sie mich</span> 
+        }@else(){
+          <span>Contact Me</span>
+        }
+      </button>
+    </div>
+  </div>
 </section>

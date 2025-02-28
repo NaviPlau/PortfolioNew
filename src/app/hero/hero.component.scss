@@ -1,32 +1,62 @@
 @use "../shared/styles/mixins" as *;
 
-section{
+section {
   height: 100vh;
   @include display(flex, column, center, center);
   width: 100%;
   max-width: 100vw;
   font-family: 'hero', serif;
   text-align: center;
+  overflow: hidden
 }
 
-h1{
-  font-size: 128px;
+.content {
+  @include display(flex, column, center, center);
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 1440px;
+
+  @media (max-height: 400px) {
+    margin-top: 50px;
+  }
 }
 
-h2{
-  font-size: 64px;
+.title {
+  @include display(flex, column, center, center);
+  gap: 30px;
+
 }
 
-.light{
+h1 {
+  font-size: 9vw;
+  line-height: 8vw;
+
+  @media (min-width: 1440px) {
+    font-size: 128px;
+    line-height: 128px;
+  }
+}
+
+h2 {
+  font-size: 5vw;
+  line-height: 5vw;
+
+  @media (min-width: 1440px) {
+    font-size: 64px;
+    line-height: 64px;
+  }
+}
+
+.light {
   background-color: $light-background;
   color: black
 }
 
-.dark{
+.dark {
   background-color: $dark-background;
-  color: white;
+  color: whitesmoke;
 }
-
 
 
 .letter {
@@ -34,7 +64,101 @@ h2{
   transition: color 20ms ease-in-out, text-transform 20ms ease-in-out;
 }
 
+@media (pointer: coarse) {
+  .light .letter {
+    display: inline-block;
+    animation: textAnimationLight calc(var(--total-time)) ease-in-out infinite;
+    animation-delay: calc(var(--i) * 200ms);
+  }
+
+  .dark .letter {
+    display: inline-block;
+    animation: textAnimationDark calc(var(--total-time)) ease-in-out infinite;
+    animation-delay: calc(var(--i) * 200ms);
+  }
+
+  h1,
+  h2 {
+    --letter-count: 12;
+    --animation-time: 2s;
+    --stagger-time: calc(var(--letter-count) * 100ms);
+    --total-time: calc(var(--animation-time) + var(--stagger-time));
+  }
+}
+
+
 .letter:hover {
-  color: $dark-normal; 
+  rotate: 10deg;
+  transition: rotate 300ms;
   text-transform: uppercase;
+}
+
+.dark-lupe {
+  cursor: url('../../../public/img/lupe-dark.png') 32 32, auto;
+
+  &:hover {
+    color: $dark-normal;
+  }
+}
+
+.light-lupe {
+  cursor: url('../../../public/img/lupe-light.png') 32 32, auto;
+
+  &:hover {
+    color: $light-normal;
+  }
+}
+
+
+@keyframes textAnimationLight {
+  0% {
+    color: inherit;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    color: $light-normal;
+    transform: rotate(10deg);
+  }
+
+  100% {
+    color: inherit;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes textAnimationDark {
+  0% {
+    color: inherit;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    color: $dark-normal;
+    transform: rotate(10deg);
+  }
+
+  100% {
+    color: inherit;
+    transform: rotate(0deg);
+  }
+}
+
+
+.button-wrapper {
+  @include display(flex, column, center, center);
+  margin-top: 40px;
+
+  @media (max-height: 400px) {
+    margin-top: 20px;
+  }
+
+  button {
+    font-size: 24px;
+
+    @media (max-width: 700px) {
+      font-size: 16px;
+      padding: 5px 10px;
+    }
+  }
 }

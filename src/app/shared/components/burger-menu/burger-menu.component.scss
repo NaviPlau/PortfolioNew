@@ -7,11 +7,13 @@ header {
   width: 100%; 
   max-width: 1440px;
   @include display(flex, row, flex-end, center);
-
+  font-family: 'hero', serif;
+  line-height: 24px;
   mat-icon{
     cursor: pointer;
-    font-size: 30px;
-
+    font-size: 42px;
+    height: auto;
+    width: auto;
   }
 }
 
@@ -23,20 +25,21 @@ header {
   left: 50%;
   transform: translateX(-50%); 
   margin: 0 auto;
+  z-index: 15;
 }
 
 
 nav {
   position: fixed;
   top: 20px;
-  right: 0;
+  right: 20px;
   width: 100%;
   max-width: 200px;
   height: fit-content;
   background-color: $light-background;
   @include display(flex, column, center, flex-start);
   padding: 16px; 
-  z-index: 1000;
+  z-index: 30;
   border: 2px solid black;
   border-radius: 5px;
 
@@ -71,11 +74,11 @@ nav {
 
 .menu-icon {
   position: fixed;
-  top: 20px;
+  top: 16px;
   right: 20px;
-  font-size: 30px;
+  font-size: 42px;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 21;
 }
 
 .link-wrapper {

@@ -17,3 +17,46 @@ body{
   
 }
 
+
+button {
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  font-family: 'hero', serif;
+  line-height: 20px;
+  font-size: 24px;
+
+  &.dark-mode{
+    background-color: transparent;
+    color: white;
+    border: 2px solid white; /* Creates the offset effect */
+    border-left: 6px solid rgba(255, 255, 255, 0.726); /* Adds depth on the left */
+    border-bottom: 6px solid rgba(255, 255, 255, 0.726); /* Adds depth at the bottom */
+    &:hover{
+      background-color: $dark-hover;
+      box-shadow:  4 4 10px rgb(255, 255, 255);
+      text-shadow: 2px 2px 2px rgb(0, 0, 0);
+      border-left: 2px solid white;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.726);
+      transform: translate(2px, 2px);
+    }
+  }
+
+  &.light-mode{
+    background-color: $light-normal;
+    color: black;
+    border: 2px solid black; /* Creates the offset effect */
+    border-left: 6px solid black; /* Adds depth on the left */
+    border-bottom: 6px solid black; /* Adds depth at the bottom */
+    &:hover{
+      background-color: $light-hover;
+      text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.507);
+      border-left: 2px solid black;
+      border-bottom: 2px solid black;
+      transform: translate(2px, 2px);
+    }
+  }
+}
+

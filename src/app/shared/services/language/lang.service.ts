@@ -12,6 +12,8 @@ export class LangService {
     toggleLanguage() {
       this.language.set(this.language() === 'en' ? 'de' : 'en');
       localStorage.setItem('lang', this.language());
+      console.log(this.language());
+      
     }
  
 }
