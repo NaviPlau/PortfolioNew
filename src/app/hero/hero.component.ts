@@ -42,15 +42,14 @@ export class HeroComponent {
   isMobile = signal(this.detectMobile()); 
   animationState = signal<'default' | 'hover'>('default'); 
 
-  // Define colors based on light/dark mode
   iconColor = computed(() => this.lightmodus.light() ? 
-    (this.animationState() === 'hover' ? '#ff834f' : '#89BCD9') :  // Light mode: hover = #89BCD9, default = #ff834f
-    (this.animationState() === 'hover' ? 'white' : '#3dcfb6')       // Dark mode: hover = #3dcfb6, default = white
+    (this.animationState() === 'hover' ? '#ff834f' : '#89BCD9') :  
+    (this.animationState() === 'hover' ? 'white' : '#3dcfb6')     
   );
 
   constructor() {
     if (this.isMobile()) {
-      setTimeout(() => this.animationState.set('hover'), 500); // Play animation once on mobile
+      setTimeout(() => this.animationState.set('hover'), 500); 
     }
   }
 
@@ -60,7 +59,7 @@ export class HeroComponent {
   }
 
   detectMobile(): boolean {
-    return window.matchMedia('(pointer: coarse)').matches; // Detect touchscreens
+    return window.matchMedia('(pointer: coarse)').matches; 
   }
 
   onMouseEnter() {
@@ -77,7 +76,7 @@ export class HeroComponent {
 
   onButtonClick() {
     if (this.isMobile()) {
-      this.animationState.set('hover'); // Ensure animation plays if the button is tapped
+      this.animationState.set('hover');
     }
   }
 }

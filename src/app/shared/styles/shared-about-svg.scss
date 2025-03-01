@@ -1,0 +1,17 @@
+@use '../styles/mixins' as *;
+
+.light-about-svg{
+  fill: $light-normal;
+  &:hover{
+    transition: 300ms ease-in-out;
+    fill: $light-hover;
+  }
+}
+
+.dark-about-svg{
+  fill: $dark-normal;
+  &:hover{
+    transition: 300ms ease-in-out;
+    fill: $dark-hover;
+  }
+}
