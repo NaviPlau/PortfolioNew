@@ -1,0 +1,16 @@
+<div class="frame-wrapper" >
+  <video  [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" #video src="https://media.paul-ivan.com/nature-drone.mp4" [appClickOutside]="closeVideo" controls></video>
+  @if(overlayOpen()){
+  <div class="overlay" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" (click)="$event.stopPropagation()">
+    <h1 class="video-info">{{videoInfo().title}}</h1>
+    <div class="video-info">
+      <h2>{{videoInfo().subtitle}}</h2>
+      <p>{{videoInfo().description}}</p>
+    </div>
+    <div class="buttons-wrapper">
+      <button [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'" (click)="playVideo()">{{videoInfo().controls[0]}}</button>
+      <button [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'" (click)="closeVideo()">{{videoInfo().controls[1]}}</button>
+    </div>
+  </div>
+  }
+</div>

@@ -22,7 +22,7 @@
             <a href=""><app-checkmark></app-checkmark></a>
             
           </div>
-          <button (click)="openVideo()" [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'"	>Video about me</button>
+          <button (click)="videoService.videoOpen.set(true)" [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'"	>{{buttonText()}}</button>
            TODO: Create And Add Video In A Videoplayer
            
         </div>
@@ -35,4 +35,8 @@
       <div class="stripe-overlay" [ngClass]="lightmodus.light() ? 'overlay-light' : 'overlay-dark'"></div>
     </div>
   </div>
+  @if(videoService.videoOpen()){
+    <app-video></app-video>
+  }
+  
 </section>

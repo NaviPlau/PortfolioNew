@@ -1,0 +1,8 @@
+<section [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
+  @for(skill of skillCubesFrontend; track skill ){
+    <app-cube [images]="skill"></app-cube>
+    <span>{{imagesFrontend[skillCubesFrontend.indexOf(skill)]}}</span>
+  }
+  
+</section>
+

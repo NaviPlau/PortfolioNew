@@ -7,19 +7,23 @@ import { ScrollIntoService } from '../shared/services/scroll-view/scroll-into.se
 import { LocationComponent } from "../shared/svg/location/location.component";
 import { HeadComponent } from "../shared/svg/head/head.component";
 import { CheckmarkComponent } from "../shared/svg/checkmark/checkmark.component";
+import { VideoComponent } from "./videoplayer/video/video.component";
+import { VideoService } from '../shared/services/video-service/video.service';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, LocationComponent, HeadComponent, CheckmarkComponent],
+  imports: [CommonModule, LocationComponent, HeadComponent, CheckmarkComponent, VideoComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
 export class AboutComponent {
   lang = inject(LangService);
   lightmodus = inject(LightDarkService);
+  videoService = inject(VideoService);
   renderer = inject(Renderer2);
   scrollService = inject(ScrollIntoService);
+  buttonText = computed(() => this.lang.language() === 'de' ? 'Video über mich' : 'About me video');
   @ViewChild('about', { static: true }) about!: ElementRef;
   @ViewChild('text', { static: true }) text!: ElementRef;
   
