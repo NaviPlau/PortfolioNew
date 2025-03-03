@@ -1,0 +1,32 @@
+@use '../shared/styles/mixins.scss' as *;
+
+section {
+  @include display(flex, column, center, center);
+  width: 100%;
+  max-width: 100vw;
+  font-family: 'hero', serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+
+.content {
+  @include display(flex, column, center, center);
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+}
+
+.cubes-wrapper{
+  @include display(flex, row, center, center);
+  flex-wrap: wrap;
+}
+
+
+.cube{
+  @include display(flex, column, center, center);
+}

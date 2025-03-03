@@ -12,9 +12,17 @@ import { LightDarkService } from '../shared/services/lightmodus/light-dark.servi
 })
 export class SkillsComponent {
   lightmodus = inject(LightDarkService);
+  showFrontend = true
+
+
   imagesFrontend = ['Firebase', 'Angular', 'Scrum', 'Rest-Api', 'Git', 'HTML', 'JavaScript', 'CSS', 'TypeScript', 'Material-Design'];
 
   skillCubesFrontend = this.imagesFrontend.map(skill => Array(6).fill(`/img/${skill.toLowerCase()}.png`));
+
+
+  imagesBackend = ['Python', 'Django', 'Linux', 'PostgreSQL', 'Cloud', 'SQL', 'Docker', 'Redis', 'Celery'];
+
+  skillCubesBAckend= this.imagesBackend.map(skill => Array(6).fill(`/img/${skill.toLowerCase()}.png`));
 
 
   

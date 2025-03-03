@@ -1,8 +1,35 @@
 <section [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
-  @for(skill of skillCubesFrontend; track skill ){
-    <app-cube [images]="skill"></app-cube>
-    <span>{{imagesFrontend[skillCubesFrontend.indexOf(skill)]}}</span>
-  }
-  
-</section>
+  <div class="content">
 
+    @if(showFrontend){
+    <div class="cubes-wrapper">
+      @for(skill of skillCubesFrontend; track skill ){
+      <div class="cube">
+
+
+        <app-cube [hoverLightColor]="lightmodus.light() ? '#89BCD9' : '#3dcfb6'" [images]="skill"></app-cube>
+        <span>{{imagesFrontend[skillCubesFrontend.indexOf(skill)]}}</span>
+      </div>
+      }
+
+    </div>
+    }
+    @if(!showFrontend){
+    <div class="cubes-wrapper">
+
+
+      @for(skill of skillCubesBAckend; track skill ){
+      <div class="cube">
+        <app-cube [hoverLightColor]="lightmodus.light() ? '#89BCD9' : '#3dcfb6'" [images]="skill"></app-cube>
+        <span>{{imagesBackend[skillCubesBAckend.indexOf(skill)]}}</span>
+      </div>
+      }
+    </div>
+    }
+
+
+    <button [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'" (click)="showFrontend = !showFrontend">Show {{showFrontend ? 'Backend' : 'Frontend'}}</button>
+
+
+  </div>
+</section>
