@@ -45,7 +45,7 @@ export class CubeComponent implements OnInit {
     // Pedestal Geometry
     const points = [];
     for (let i = 0; i <= 10; i++) {
-      points.push(new THREE.Vector2(40 - Math.pow(i, 1.5), i * 2 - 5)); // Smooth curved shape
+      points.push(new THREE.Vector2(40 - Math.pow(i, 1.5), i * 2 - 5));
     }
 
     const pedestalGeometry = new THREE.LatheGeometry(points, 32);
@@ -99,10 +99,10 @@ export class CubeComponent implements OnInit {
   animate(): void {
     requestAnimationFrame(() => this.animate());
 
-    if (this.isHovered) {
+   
       this.cube.rotation.z += 0.005;
       this.cube.rotation.y += 0.005;
-    }
+
 
     this.renderer.render(this.scene, this.camera);
   }

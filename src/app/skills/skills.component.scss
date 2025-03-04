@@ -11,22 +11,70 @@ section {
 
 
 .content {
-  @include display(flex, column, center, center);
+  @include display(flex, row, space-between, center);
   position: relative;
   height: 100%;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   padding: 40px 20px;
-
+  gap: 30px;
+  @media (max-width:800px){
+    @include display(flex, column-reverse, center, center);
+  }
 }
 
-.cubes-wrapper{
+.cubes-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; 
+  @media (max-width:1050px){
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media(max-width: 800px){
+    @include display(flex, row, center, center);
+    flex-wrap: wrap;
+  }
+
+
+  
+}
+
+.backend{
   @include display(flex, row, center, center);
-  flex-wrap: wrap;
+  position: relative;
 }
 
 
 .cube{
+  cursor: pointer;
+  width: 100px;
   @include display(flex, column, center, center);
+}
+
+.text{
+  width: 90%;
+  font-family: 'hero', serif;
+  text-align: left;
+}
+
+.button-wrapper{
+  @include display(flex, column, center, center);
+  gap: 10px;
+  max-width: 600px;
+  width: 100%;
+  padding: 40px 20px;
+  border-radius: 30px;
+}
+
+.light-text{
+  color: black;
+  &:hover{
+    color: black;
+    animation: fillUpLight 3s ease-in-out infinite;
+  }
+}
+
+.fs-18{
+  font-size: 18px;
 }

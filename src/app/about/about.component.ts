@@ -26,6 +26,8 @@ export class AboutComponent {
   buttonText = computed(() => this.lang.language() === 'de' ? 'Video über mich' : 'About me video');
   @ViewChild('about', { static: true }) about!: ElementRef;
   @ViewChild('text', { static: true }) text!: ElementRef;
+
+  // TODO: write the thext in the text-service
   
   aboutSection = computed(() => ( this.lang.language() === 'de' ? {
     subtitle: "Wer ich bin",

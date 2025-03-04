@@ -1,35 +1,34 @@
 <section [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
   <div class="content">
 
-    @if(showFrontend){
-    <div class="cubes-wrapper">
-      @for(skill of skillCubesFrontend; track skill ){
-      <div class="cube">
-
-
-        <app-cube [hoverLightColor]="lightmodus.light() ? '#89BCD9' : '#3dcfb6'" [images]="skill"></app-cube>
-        <span>{{imagesFrontend[skillCubesFrontend.indexOf(skill)]}}</span>
-      </div>
-      }
-
-    </div>
-    }
-    @if(!showFrontend){
-    <div class="cubes-wrapper">
-
-
-      @for(skill of skillCubesBAckend; track skill ){
-      <div class="cube">
-        <app-cube [hoverLightColor]="lightmodus.light() ? '#89BCD9' : '#3dcfb6'" [images]="skill"></app-cube>
-        <span>{{imagesBackend[skillCubesBAckend.indexOf(skill)]}}</span>
-      </div>
+    <div class="cubes-wrapper" (click)="$event.stopPropagation()">
+      @for(skill of (showFrontend() ? skillCubesFrontend : skillCubesBackend); track skill ) {
+        <div class="cube">
+          <app-cube 
+            (click)="showText((showFrontend() ? skillCubesFrontend : skillCubesBackend).indexOf(skill))" 
+            [hoverLightColor]="lightmodus.light() ? '#89BCD9' : '#3dcfb6'" 
+            [images]="skill">
+          </app-cube>
+          <span>{{ (showFrontend() ? imagesFrontend : imagesBackend)[(showFrontend() ? skillCubesFrontend : skillCubesBackend).indexOf(skill)] }}</span>
+        </div>
       }
     </div>
-    }
+    
+    <div class="button-wrapper"  [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'">
+      <h1 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{introText()}} </h1>
+      <button [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'" class="fs-18" (click)="showFrontend.set(!showFrontend())">{{buttonText()}}</button>
+        @if(shownText()){
+          <div class="text" [appClickOutside]="hideText">
+            {{shownText()}}
+          </div>
+        }@else {
+          <div class="text" [appClickOutside]="hideText">
+            <span>{{standardText()}}</span>
+          </div>
+        }
+    </div>
 
-
-    <button [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'" (click)="showFrontend = !showFrontend">Show {{showFrontend ? 'Backend' : 'Frontend'}}</button>
-
+    TODO: check todos and mmedia query
 
   </div>
 </section>

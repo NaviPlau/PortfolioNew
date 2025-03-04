@@ -17,7 +17,6 @@ export class ScrollIntoService {
         }
       });
     }, { threshold: 0.3 });
-
     observer.observe(element.nativeElement);
   }
 }
