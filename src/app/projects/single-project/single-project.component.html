@@ -1,0 +1,10 @@
+<span>{{project.about}}</span>
+<span>{{project.process}}</span>
+<a href="{{project.gitLink}}">GitLink</a>
+<a href="{{project.liveLink}}">LiveLink</a>
+<div>
+  <span>{{project.tech.title}}:</span>
+  @for(tech of project.tech.techs; track tech){
+    <span>{{tech}}</span>
+  }
+</div>

@@ -1,1 +1,23 @@
-<p>projects works!</p>
+<section [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
+  <div class="content">
+    <h1>{{text.projectText().title}}</h1>
+    <div>
+      <button  (click)="selectFrontend()">Frontend</button>
+      <button (click)="selectBackend()">Backend</button>
+    </div>
+    <div>
+      @if(selectedFrontend()){
+        @for(project of text.frontendProjects(); track project){
+          <button (click)="text.selectProject(project.id)">{{ project.title }}</button>
+        }
+      }@else(){
+        @for(project of text.backendProjects(); track project){
+          <button (click)="text.selectProject(project.id)">{{ project.title }}</button>
+        }
+      }
+    </div>
+    <div>
+      <app-single-project [project]="text.actualProject()"></app-single-project>
+    </div>
+  </div>
+</section>

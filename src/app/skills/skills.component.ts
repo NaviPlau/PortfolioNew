@@ -3,9 +3,9 @@ import { CubeComponent } from "../shared/components/cube/cube.component";
 import { CommonModule } from '@angular/common';
 import { LightDarkService } from '../shared/services/lightmodus/light-dark.service';
 import { ClickOutsideDirective } from '../shared/directives/click-outside.directive';
-import { TextService } from '../shared/services/text-data/text.service';
 import { AriaConverterDirective } from '../shared/directives/aria-label-converter/aria-converter.directive';
 import { ScrollIntoService } from '../shared/services/scroll-view/scroll-into.service';
+import { TextSkillsService } from '../shared/services/text-data/text-skills.service';
 
 @Component({
   selector: 'app-skills',
@@ -16,7 +16,7 @@ import { ScrollIntoService } from '../shared/services/scroll-view/scroll-into.se
 })
 export class SkillsComponent {
   lightmodus = inject(LightDarkService);
-  text = inject(TextService)
+  text = inject(TextSkillsService)
   shownText = signal('');
   scrollService = inject(ScrollIntoService);
   renderer = inject(Renderer2);
@@ -32,8 +32,6 @@ export class SkillsComponent {
     this.text.showFrontendSkills.set(!this.text.showFrontendSkills())
   }
 
-
-  
   showText(skill: number) {
     if (skill !== -1) {
       if (this.text.showFrontendSkills()) {
@@ -55,8 +53,6 @@ export class SkillsComponent {
     }, 100); 
   }
   
-
-
   hideText = () => {
     this.shownText.set('');
   }

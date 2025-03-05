@@ -1,0 +1,8 @@
+@use '../shared/styles/mixins.scss' as *;
+
+section {
+  @include display(flex, column, center, center);
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+}
