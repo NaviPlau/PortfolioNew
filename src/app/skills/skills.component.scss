@@ -24,20 +24,43 @@ section {
   }
 }
 
+@keyframes fadeInStaggered {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .cubes-wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px; 
-  @media (max-width:1050px){
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media(max-width: 800px){
-    @include display(flex, row, center, center);
-    flex-wrap: wrap;
-  }
+  @include display(flex, row, center, center);
+  flex-wrap: wrap;
+  gap: 20px;
+  opacity: 0; 
+  transform: translateY(-20%);
+  max-width: 600px;
+  width: 100%;
 
 
-  
+  &.animate-fade-in-staggered {
+    opacity: 1;
+    transform: translateY(0);
+
+    .cube {
+      opacity: 0;
+      transform: translateY(-20%);
+      animation: fadeInStaggered 0.6s ease-out forwards;
+    }
+
+    @for $i from 1 through 12 {
+      .cube:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.15s}
+      }
+    }
+  }
 }
 
 .backend{
@@ -50,6 +73,7 @@ section {
   cursor: pointer;
   width: 100px;
   @include display(flex, column, center, center);
+
 }
 
 .text{
@@ -65,6 +89,11 @@ section {
   width: 100%;
   padding: 40px 20px;
   border-radius: 30px;
+  opacity: 0;
+  transform: translateY(-20%);
+
+
+
 }
 
 .light-text{
@@ -77,4 +106,16 @@ section {
 
 .fs-18{
   font-size: 18px;
+}
+
+.animate-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-fade-from-right{
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }

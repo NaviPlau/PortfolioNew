@@ -16,8 +16,18 @@ export class ScrollIntoService {
           renderer.removeClass(element.nativeElement, animationClass);
         }
       });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.05 });
     observer.observe(element.nativeElement);
+  }
+
+
+  scrollToElement(element: ElementRef, offset: number = 100) {
+    if (element && element.nativeElement) {
+      window.scrollTo({
+        top: element.nativeElement.getBoundingClientRect().top + window.scrollY - offset,
+        behavior: 'smooth'
+      });
+    }
   }
 }
 

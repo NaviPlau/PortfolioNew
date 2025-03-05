@@ -1,34 +1,35 @@
 <section [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
   <div class="content">
 
-    <div class="cubes-wrapper" (click)="$event.stopPropagation()">
-      @for(skill of (showFrontend() ? skillCubesFrontend : skillCubesBackend); track skill ) {
+    <div class="cubes-wrapper" #cube  (click)="$event.stopPropagation()">
+      @for(skill of (text.showFrontendSkills() ? skillCubesFrontend : skillCubesBackend); track skill ) {
         <div class="cube">
-          <app-cube 
-            (click)="showText((showFrontend() ? skillCubesFrontend : skillCubesBackend).indexOf(skill))" 
+          <app-cube
+            (click)="showText((text.showFrontendSkills() ? skillCubesFrontend : skillCubesBackend).indexOf(skill))" 
             [hoverLightColor]="lightmodus.light() ? '#89BCD9' : '#3dcfb6'" 
             [images]="skill">
           </app-cube>
-          <span>{{ (showFrontend() ? imagesFrontend : imagesBackend)[(showFrontend() ? skillCubesFrontend : skillCubesBackend).indexOf(skill)] }}</span>
+          <span   appAriaConverter>{{ (text.showFrontendSkills() ? imagesFrontend : imagesBackend)[(text.showFrontendSkills() ? skillCubesFrontend : skillCubesBackend).indexOf(skill)] }}</span>
         </div>
       }
     </div>
     
-    <div class="button-wrapper"  [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'">
-      <h1 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{introText()}} </h1>
-      <button [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'" class="fs-18" (click)="showFrontend.set(!showFrontend())">{{buttonText()}}</button>
-        @if(shownText()){
-          <div class="text" [appClickOutside]="hideText">
-            {{shownText()}}
-          </div>
-        }@else {
-          <div class="text" [appClickOutside]="hideText">
-            <span>{{standardText()}}</span>
-          </div>
-        }
+    <div class="button-wrapper" #buttonWrap [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'">
+      <h1 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.skillsText().title}} </h1>
+      @if(shownText()){
+        <div appAriaConverter class="text" [appClickOutside]="hideText">
+          {{shownText()}}
+
+        </div>
+      }@else {
+        <div class="text" [appClickOutside]="hideText">
+          TODO: write text
+          <span appAriaConverter>{{text.skillsText().clickText}}</span>
+        </div>
+      }
+      <button appAriaConverter [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'" class="fs-18" (click)="toggleSkills()">{{text.skillsText().buttonText()}}</button>
+       
     </div>
-
-    TODO: check todos and mmedia query
-
+      
   </div>
 </section>
