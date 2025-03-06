@@ -1,10 +1,30 @@
-<span>{{project.about}}</span>
-<span>{{project.process}}</span>
-<a href="{{project.gitLink}}">GitLink</a>
-<a href="{{project.liveLink}}">LiveLink</a>
-<div>
-  <span>{{project.tech.title}}:</span>
-  @for(tech of project.tech.techs; track tech){
-    <span>{{tech}}</span>
-  }
+<div class="content">
+  <div class="text-area">
+    <div class="text-wrapper" [ngClass]="lightmodus.light() ? 'light-icon' : 'dark-icon'">
+      <mat-icon class="icon">fiber_manual_record</mat-icon>
+      <p>{{project.about}}</p>
+    </div>
+    <div class="text-wrapper" [ngClass]="lightmodus.light() ? 'light-icon' : 'dark-icon'">
+      <mat-icon class="icon">fiber_manual_record</mat-icon>
+      <p class="hovered-text">{{project.process}}</p>
+    </div>
+
+  </div>
+
+  <div class="img-area">
+    <span>{{project.tech.title}}:</span>
+
+    <div class="tech-area">
+      @for(tech of project.tech.techs; track tech){
+        <img class="tech-img" src="img/{{tech.toLowerCase()}}.png	" alt="">
+      }
+    </div>
+      <img [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" class="project-img" src="{{project.image}}" alt="">
+    
+    <div class="links">
+      <a href="{{project.gitLink}}" target="_blank">GitLink</a>
+      <a href="{{project.liveLink}}" target="_blank">LiveLink</a>
+    </div>
+    
+  </div>
 </div>

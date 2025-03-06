@@ -21,9 +21,9 @@ export class TextProjectsService {
         title : "DA-Bubble",
         about : "Eine app angelehnt an Slack, um Kommunikation und Kooperation zu verbessern.",
         process : "Das benutzen von Angular signals in verbindung mit Firebase und Observables war ein wichtiger Bestandteil der Entwicklung.",
-        gitLink : "https://github.com/paul-ivan/da-bubble",
-        liveLink : "https://da-bubble.web.app/",
-        image : "assets/da-bubble.png",
+        gitLink : "https://github.com/NaviPlau/DaBubble",
+        liveLink : "https://da-bubble.paul-ivan.com/",
+        image : "img/dabubble.png",
         tech : {
           title : "Technologien",
           techs : [
@@ -37,26 +37,26 @@ export class TextProjectsService {
         title : "Join Vanilla",
         about : "Task management web app um Todos besser verwalten zu können.",
         process: "Mein erstes Großes Project mit javascript und firebase. Die verbindung zwischen datenbank und Frontend herzustelen war eine Personliche Herausforderung.",
-        gitLink : "https://github.com/paul-ivan/join-vanilla",
-        liveLink : "https://join-vanilla.web.app/",
-        image : "assets/join-vanilla.png",
+        gitLink : "https://github.com/NaviPlau/join",
+        liveLink : "https://join.paul-ivan.com",
+        image : "img/join.png",
         tech : {
           title : "Technologien",
           techs : [
             "JavaScript",
             "Firebase",
-            "RESTAPI",
+            "Rest-api",
           ]
         }
       },
       {
         id : 3,
-        title: "El Pollo Loco",
+        title: "EPL",
         about : "Jump and Run Spiel mit Tabasco and chicken geschmack.",
         process: "Der focus in dieser projekt liegt bei der Objektorientiertes programieren und die Veerbung von Classen",
-        gitLink : "https://github.com/paul-ivan/el-pollo-loco",
-        liveLink : "https://el-pollo-loco.web.app/",
-        image : "assets/el-pollo-loco.png",
+        gitLink : "https://github.com/NaviPlau/ElPolloLoco",
+        liveLink : "https://el-pollo-loco.paul-ivan.com/",
+        image : "img/epl.png",
         tech : {
           title : "Technologien",
           techs : [
@@ -73,7 +73,7 @@ export class TextProjectsService {
         process : "Umsetzung von Join Vanilla mit Angular und Django.",
         gitLink : "https://github.com/paul-ivan/join-django", 
         liveLink : "https://join-django.web.app/",
-        image : "assets/join-django.png",
+        image : "img/join.png",
         tech : {
           title : "Technologien",
           techs : [
@@ -132,9 +132,9 @@ export class TextProjectsService {
           title : "DA-Bubble",
           about : "An app inspired by Slack to improve communication and cooperation.",
           process : "Using Angular signals in combination with Firebase and Observables was an important part of the development.",
-          gitLink : "https://github.com/paul-ivan/da-bubble",
-          liveLink : "https://da-bubble.web.app/",
-          image : "assets/da-bubble.png",
+          gitLink : "https://github.com/NaviPlau/DaBubble",
+          liveLink : "https://da-bubble.paul-ivan.com/",
+          image : "img/dabubble.png",
           tech : {
             title : "Technologies",
             techs : [
@@ -148,9 +148,9 @@ export class TextProjectsService {
           title : "Join Vanilla",
           about : "Task management web app to manage Todos better.",
           process: "My first big project with javascript and firebase. The connection between database and frontend was a personal challenge.",
-          gitLink : "https://github.com/paul-ivan/join-vanilla",
-          liveLink : "https://join-vanilla.web.app/",
-          image : "assets/join-vanilla.png",
+          gitLink : "https://github.com/NaviPlau/join",
+          liveLink : "https://join.paul-ivan.com/",
+          image : "img/join.png",
           tech : {
             title : "Technologies",
             techs : [
@@ -162,12 +162,12 @@ export class TextProjectsService {
         },
         {
           id : 3,
-          title: "El Pollo Loco",
+          title: "EPL",
           about : "Jump and Run Game with Tabasco and chicken flavor.",
           process: "The focus in this project lies on object-oriented programming and class inheritance",
-          gitLink : "https://github.com/paul-ivan/el-pollo-loco",
-          liveLink : "https://el-pollo-loco.web.app/",
-          image : "assets/el-pollo-loco.png",
+          gitLink : "https://github.com/NaviPlau/ElPolloLoco",
+          liveLink : "https://el-pollo-loco.paul-ivan.com/",
+          image : "img/epl.png",
           tech : {
             title : "Technologies",
             techs : [
@@ -184,7 +184,7 @@ export class TextProjectsService {
           process : "Umsetzung von Join Vanilla mit Angular und Django.",
           gitLink : "https://github.com/paul-ivan/join-django", 
           liveLink : "https://join-django.web.app/",
-          image : "assets/join-django.png",
+          image : "img/join.png",
           tech : {
             title : "Technologien",
             techs : [

@@ -1,23 +1,69 @@
 <section [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
   <div class="content">
-    <h1>{{text.projectText().title}}</h1>
-    <div>
-      <button  (click)="selectFrontend()">Frontend</button>
-      <button (click)="selectBackend()">Backend</button>
+    <h1 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.projectText().title}}</h1>
+    
+    <div class="buttons-wrapper">
+      <div 
+        class="dev-type" 
+        [ngClass]="{
+          'border-light-reverse': lightmodus.light() && selectedFrontend(),
+          'border-dark-reverse': !lightmodus.light() && selectedFrontend(),
+          'border-light': lightmodus.light() && !selectedFrontend(),
+          'border-dark': !lightmodus.light() && !selectedFrontend()
+        }"
+        (click)="selectFrontend()">
+        Frontend
+      </div>
+      <div 
+        class="dev-type" 
+        [ngClass]="{
+          'border-light-reverse': lightmodus.light() && !selectedFrontend(),
+          'border-dark-reverse': !lightmodus.light() && !selectedFrontend(),
+          'border-light': lightmodus.light() && selectedFrontend(),
+          'border-dark': !lightmodus.light() && selectedFrontend()
+        }"
+        (click)="selectBackend()">
+        Backend
+      </div>
     </div>
-    <div>
-      @if(selectedFrontend()){
-        @for(project of text.frontendProjects(); track project){
-          <button (click)="text.selectProject(project.id)">{{ project.title }}</button>
+
+    <div class="project">
+      @if(selectedFrontend()) {
+        @for(project of text.frontendProjects(); track project) {
+          <div class="single-project"
+            [ngClass]="{
+              'border-light-reverse': lightmodus.light() && text.selectedProjectId() === project.id,
+              'border-dark-reverse': !lightmodus.light() && text.selectedProjectId() === project.id,
+              'border-light': lightmodus.light() && text.selectedProjectId() !== project.id,
+              'border-dark': !lightmodus.light() && text.selectedProjectId() !== project.id
+            }" 
+            (click)="text.selectProject(project.id)">
+            {{ project.title }}
+          </div>
         }
-      }@else(){
-        @for(project of text.backendProjects(); track project){
-          <button (click)="text.selectProject(project.id)">{{ project.title }}</button>
+      } @else {
+        @for(project of text.backendProjects(); track project) {
+          <div class="single-project"
+            [ngClass]="{
+              'border-light-reverse': lightmodus.light() && text.selectedProjectId() === project.id,
+              'border-dark-reverse': !lightmodus.light() && text.selectedProjectId() === project.id,
+              'border-light': lightmodus.light() && text.selectedProjectId() !== project.id,
+              'border-dark': !lightmodus.light() && text.selectedProjectId() !== project.id
+            }" 
+            (click)="text.selectProject(project.id)">
+            {{ project.title }}
+          </div>
         }
       }
     </div>
-    <div>
+
+    <div class="project-wrapper" [ngClass]="{
+      'border-light': lightmodus.light(),
+      'border-dark': !lightmodus.light()
+        }">
       <app-single-project [project]="text.actualProject()"></app-single-project>
     </div>
+
   </div>
 </section>
+

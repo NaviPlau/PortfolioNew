@@ -1,0 +1,61 @@
+@use '../../shared/styles/mixins' as *;
+
+.content {
+  @include display(flex, row, space-between, center);
+  position: relative;
+  gap: 20px;
+  padding: 10px 30px;
+}
+
+.tech-img {
+  height: 32px;
+  width: 32px;
+  object-fit: cover;
+}
+
+.text-wrapper {
+  width: 100%;
+  @include display(flex, row, flex-start, center);
+  gap: 10px;
+
+  &.light-icon {
+    .icon {
+      color: $light-normal;
+    }
+  }
+  &.dark-icon {
+    .icon {
+      color: $dark-hover;
+    }
+  }
+
+  &:hover {
+    &.light-icon {
+      .icon {
+        color: $light-hover;
+      }
+    }
+    &.dark-icon {
+      .icon {
+        color: $dark-normal;
+      }
+    }
+  }
+}
+
+
+.img-area {
+  @include display(flex, column, center, center);
+  gap: 10px
+}
+
+.project-img {
+  width: 100%;
+  object-fit: cover;
+  max-width: 450px;
+  border-radius: 20px;
+}
+
+.tech-area {
+  @include display(flex, row, center, center);
+}
