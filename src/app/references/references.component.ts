@@ -19,9 +19,11 @@ export class ReferencesComponent {
   scrollService = inject(ScrollIntoService)
   renderer = inject(Renderer2)
   @ViewChild('singleReference', { static: true }) singleReference!: ElementRef
+  @ViewChild('referencesTitle', { static: true }) referencesTitle!: ElementRef
 
   ngAfterViewInit(): void {
     this.scrollService.observeElement(this.singleReference, this.renderer, 'animate-rotate-bottom');
+    this.scrollService.observeElement(this.referencesTitle, this.renderer, 'animation-title');
   }
 
 }

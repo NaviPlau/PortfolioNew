@@ -33,8 +33,14 @@ section {
   animation: rotate-bottom 1s ease-in-out both;
 }
 
+.animation-title{
+  animation: animate-title 1s ease-in-out forwards;
+}
+
 h1{
   font-size: 36px;
+  transform: translate(50%);
+  opacity: 0;
 }
 
 
@@ -48,5 +54,16 @@ h1{
     scale: 1;
     opacity: 1;
     transform: rotateX(0deg);
+  }
+}
+
+@keyframes animate-title {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

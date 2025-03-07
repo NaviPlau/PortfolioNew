@@ -1,7 +1,7 @@
 <section [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
 
   <div class="content" >
-    <h1 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.title()}}</h1>
+    <h1 #referencesTitle [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.title()}}</h1>
     <div class="wrapper" appHorizontalDirectives #singleReference>
       @for(reference of text.references(); track reference){
           <app-single-reference [reference]="reference"></app-single-reference>

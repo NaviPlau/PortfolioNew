@@ -1,1 +1,19 @@
-<p>contact works!</p>
+<section [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
+  <div class="content">
+    <h1 #contactTitle [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.title()}}</h1>
+    <div>
+      <span>{{text.subtitle()}}</span>
+      <p>{{text.description()}}</p>
+    </div>
+    <form action="" #contactForm>
+      <div class="form-field">
+        <label for="name" [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.formText().firstname}}</label>
+        <input type="text" id="name"  name="name" [placeholder]="text.formText().firstname" required>
+      </div>
+      <div class="form-field">
+        <label for="email" [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+      </div>
+    </form>
+  </div>
+</section>

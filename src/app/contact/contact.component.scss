@@ -1,0 +1,42 @@
+@use '../shared/styles/mixins.scss' as *;
+
+section{
+  @include display(flex, column, center, center);
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.content{
+  @include display(flex, column, center, center);
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1{
+  width: 100%;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+  opacity: 0;
+}
+
+.animated-title{
+  animation: animate-title 1s ease-in-out forwards;
+}
+
+@keyframes animate-title {
+  from {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
