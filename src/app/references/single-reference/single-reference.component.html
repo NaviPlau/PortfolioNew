@@ -1,0 +1,10 @@
+<div class="reference-wrapper" [ngClass]="lightmodus.light() ? 'border-light shadow-light' : 'border-dark shadow-dark'" >
+
+  <p>{{reference.description}}</p>
+  <div class="info-wrapper">
+    <div>{{reference.job}}</div>
+    <div>{{reference.referencer}}</div>
+    <div>Project: {{reference.project}}</div>
+  </div>
+  
+</div>

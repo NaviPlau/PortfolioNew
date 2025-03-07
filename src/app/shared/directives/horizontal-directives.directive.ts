@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appHorizontalDirectives]'
+  selector: '[appHorizontalDirectives]',
+  standalone: true
 })
 export class HorizontalDirectivesDirective {
   private isHovering = false;

@@ -21,7 +21,9 @@ h1{
   width: 100%;
   text-align: center;
   font-size: 36px;
-  margin-bottom: 20px
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateX(-50%);
 }
 
 .buttons-wrapper {
@@ -52,6 +54,7 @@ h1{
   text-wrap: nowrap;
   padding: 6px 4px;
   width: 100%;
+  cursor: pointer;
 }
 
 .project-wrapper{
@@ -81,3 +84,37 @@ h1{
   }
 }
 
+.full-project{
+  opacity: 0;
+  width: 100%;
+}
+
+.animate-fade-from-right{
+  animation: animate-title 1s ease-in-out forwards;
+}
+
+@keyframes animate-title {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-project{
+  animation: rotate-project 1s ease-in-out forwards;
+}
+
+@keyframes rotate-project {
+  from {
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}

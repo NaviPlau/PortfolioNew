@@ -50,7 +50,7 @@ export class CubeComponent implements OnInit {
 
     const pedestalGeometry = new THREE.LatheGeometry(points, 32);
     const pedestalMaterial = new THREE.MeshPhysicalMaterial({
-      map: new THREE.TextureLoader().load('/img/rusty.jpg'),
+      map: new THREE.TextureLoader().load('/img/brickWall.jpg'),
     });
 
     const pedestal = new THREE.Mesh(pedestalGeometry, pedestalMaterial);

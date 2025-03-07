@@ -1,0 +1,52 @@
+@use '../shared/styles/mixins.scss' as *;
+section {
+  @include display(flex, column, center, center);
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.content{
+  @include display(flex, column, center, center);
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  
+}
+
+.wrapper{
+  @include display(flex, row, flex-start, center);
+  position: relative;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  width: 100%;
+  gap: 30px;
+  padding: 10px 10px;
+  opacity: 0;
+}
+
+.animate-rotate-bottom{
+  animation: rotate-bottom 1s ease-in-out both;
+}
+
+h1{
+  font-size: 36px;
+}
+
+
+@keyframes rotate-bottom {
+  0% {
+    opacity: 0;
+    scale: 0.5;
+    transform: rotateY(130deg);
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}

@@ -7,7 +7,12 @@ export class LightDarkService {
   light = signal(true)
   dark = signal(false)
   constructor() { 
-    this.light.set(JSON.parse(localStorage.getItem('mode') || 'false'))
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      this.light.set(false)
+      this.dark.set(true)
+    }else{
+      this.light.set(JSON.parse(localStorage.getItem('mode') || 'false'))
+    }
   }
 
   toggle() {

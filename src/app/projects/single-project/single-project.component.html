@@ -1,29 +1,29 @@
 <div class="content">
   <div class="text-area">
     <div class="text-wrapper" [ngClass]="lightmodus.light() ? 'light-icon' : 'dark-icon'">
-      <mat-icon class="icon">fiber_manual_record</mat-icon>
+      <span><mat-icon class="icon">fiber_manual_record</mat-icon></span>
       <p>{{project.about}}</p>
     </div>
     <div class="text-wrapper" [ngClass]="lightmodus.light() ? 'light-icon' : 'dark-icon'">
-      <mat-icon class="icon">fiber_manual_record</mat-icon>
+      <span><mat-icon class="icon">fiber_manual_record</mat-icon></span>
       <p class="hovered-text">{{project.process}}</p>
     </div>
 
   </div>
 
   <div class="img-area">
-    <span>{{project.tech.title}}:</span>
+    <span>{{project.tech.title}}</span>
 
     <div class="tech-area">
       @for(tech of project.tech.techs; track tech){
-        <img class="tech-img" src="img/{{tech.toLowerCase()}}.png	" alt="">
+        <img (click)="scrollToTech(tech)" class="tech-img" src="img/{{tech.toLowerCase()}}.png	" alt="">
       }
     </div>
-      <img [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" class="project-img" src="{{project.image}}" alt="">
+      <a href="{{project.liveLink}}" target="_blank"><img [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" class="project-img" src="{{project.image}}" alt=""></a>
     
     <div class="links">
-      <a href="{{project.gitLink}}" target="_blank">GitLink</a>
-      <a href="{{project.liveLink}}" target="_blank">LiveLink</a>
+      <a href="{{project.gitLink}}" target="_blank"><button [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'">Git Link</button></a>
+      <a href="{{project.liveLink}}" target="_blank"><button [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'">Live Link</button></a>
     </div>
     
   </div>

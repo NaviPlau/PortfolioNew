@@ -5,13 +5,23 @@
   position: relative;
   gap: 20px;
   padding: 10px 30px;
+  @media(max-width: 800px){
+    flex-direction: column-reverse;
+  }
 }
 
 .tech-img {
   height: 32px;
   width: 32px;
-  object-fit: cover;
+  object-fit: fill;
 }
+
+.icon{
+  @media(max-width: 400px){
+    display: none;
+  }
+}
+
 
 .text-wrapper {
   width: 100%;
@@ -51,11 +61,31 @@
 
 .project-img {
   width: 100%;
-  object-fit: cover;
-  max-width: 450px;
+  object-fit: fill;
+  width: 300px;
+  height: 200px;
   border-radius: 20px;
+  @media(max-width: 400px){
+    width: 200px;
+    height: 160px;
+  }
 }
 
 .tech-area {
   @include display(flex, row, center, center);
+  gap: 8px;
+  @media(max-width: 340px){
+    flex-wrap: wrap;
+   
+  }
+}
+
+button{
+  font-size: 16px;
+  padding: 4px 8px;
+}
+
+.links{
+  @include display(flex, row, center, center);
+  gap: 10px;
 }

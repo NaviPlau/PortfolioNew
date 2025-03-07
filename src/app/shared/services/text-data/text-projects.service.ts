@@ -92,7 +92,7 @@ export class TextProjectsService {
         process : "Erstellung von Backend mit Django uns Sqlite. Frontend wurde von Developer Akademie zu verfügung gestellt",
         gitLink : "https://github.com/paul-ivan/coderr", 
         liveLink : "https://coderr.web.app/",
-        image :   "assets/coderr.png",
+        image :   "img/coderr.png",
         tech : {
           title : "Technologien",
           techs : [
@@ -110,7 +110,7 @@ export class TextProjectsService {
         process : "Using django with postgresql, redis and celery to guarantee a smooth user experience.",
         gitLink : "https://github.com/paul-ivan/videoflix", 
         liveLink : "https://videoflix.web.app/",
-        image : "assets/videoflix.png",
+        image : "img/videoflix.png",
         tech : {
           title : "Technologien",
           techs : [
@@ -156,7 +156,7 @@ export class TextProjectsService {
             techs : [
               "JavaScript",
               "Firebase",
-              "RESTAPI",
+              "Rest-Api",
             ]
           }
         },
@@ -203,7 +203,7 @@ export class TextProjectsService {
         process : "Creation of Backend with Django and Sqlite. Frontend was provided by Developer Akademie",
         gitLink : "https://github.com/paul-ivan/coderr", 
         liveLink : "https://coderr.web.app/",
-        image :   "assets/coderr.png",
+        image :   "img/coderr.png",
         tech : {
           title : "Technologien",
           techs : [
@@ -221,7 +221,7 @@ export class TextProjectsService {
         process : "Using django with postgresql, redis and celery to guarantee a smooth user experience.",
         gitLink : "https://github.com/paul-ivan/videoflix", 
         liveLink : "https://videoflix.web.app/",
-        image : "assets/videoflix.png",
+        image : "img/videoflix.png",
         tech : {
           title : "Technologien",
           techs : [
