@@ -5,15 +5,98 @@
       <span>{{text.subtitle()}}</span>
       <p>{{text.description()}}</p>
     </div>
-    <form action="" #contactForm>
-      <div class="form-field">
-        <label for="name" [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.formText().firstname}}</label>
-        <input type="text" id="name"  name="name" [placeholder]="text.formText().firstname" required>
+    <form (ngSubmit)="submit()" [formGroup]="contactForm">
+      <div class="contact-field">
+        <div class="form-field">
+          <label for="name" [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.formText().name}}
+          </label>
+          <div class="input-field" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'">
+            <input [ngClass]="lightmodus.light() ? 'input-light' : 'input-dark'" formControlName="name" type="text"
+              id="name" name="name" [placeholder]="text.formText().name" required>
+          </div>
+          @if (name.touched && (name.errors?.required || name.errors?.minlength)) {
+          <span class="error">
+            @if (name.errors?.minlength) {
+            <span>
+              {{ text.formText().errors.name.minlength }}
+            </span>
+            }
+            @if (name.errors?.required) {
+            <span>
+              {{ text.formText().errors.name.required }}
+            </span>
+            }
+          </span>
+          }
+        </div>
+        <div class="form-field">
+          <label for="email" [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">Email</label>
+          <div class="input-field" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'">
+            <input [ngClass]="lightmodus.light() ? 'input-light' : 'input-dark'" formControlName="email" type="email"
+              id="email" name="email" [placeholder]="text.formText().email">
+          </div>
+          @if (email.touched && (email.errors?.required || email.errors?.pattern)) {
+          <span class="error">
+            @if (email.errors?.pattern) {
+            <span>
+              {{ text.formText().errors.email.pattern }}
+            </span>
+            }
+            @if (email.errors?.required) {
+            <span>
+              {{ text.formText().errors.email.required }}
+            </span>
+            }
+          </span>
+          }
+        </div>
+
       </div>
       <div class="form-field">
-        <label for="email" [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">Email</label>
-        <input type="email" id="email" name="email" placeholder="Email" required>
+        <label for="message" [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">Nachricht</label>
+        <div class="input-field" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'">
+          <textarea maxlength="1000" [ngClass]="lightmodus.light() ? 'input-light' : 'input-dark'"
+            formControlName="message" id="message" name="message" [placeholder]="text.formText().message"></textarea>
+            @if (message.value) {
+              <span class="textarea-length">
+                {{ 1000 - message.value.length }} {{ text.textLength() }}
+              </span>
+            }
+        </div>
+        @if (message.touched && (message.errors?.required || message.errors?.minlength)) {
+        <span class="error">
+          @if (message.errors?.minlength) {
+          <span>
+            {{ text.formText().errors.message.minlength }}
+          </span>
+          }
+          @if (message.errors?.required) {
+          <span>
+            {{ text.formText().errors.message.required }}
+          </span>
+          }
+        </span>
+        }
       </div>
+      <div class="form-field">
+        <input type="checkbox" formControlName="privacyPolicy" id="privacyPolicy" class="custom-checkbox">
+        <label for="privacyPolicy" class="custom-checkbox-label">
+          <span class="custom-checkbox-box" [ngClass]="lightmodus.light() ? 'checkbox-light' : 'checkbox-dark'"></span>
+          <span class="label-text">{{ text.formText().checkbox }} <a [ngClass]="lightmodus.light() ? 'policy-light' : 'policy-dark'" href=""> {{ text.policy() }} </a></span>
+        </label>
+        
+        @if (privacyPolicy.touched && privacyPolicy.errors?.required) {
+          <span class="error">
+            {{ text.formText().errors.checkbox.required }}
+          </span>
+        }
+      </div>
+      
+      
+
+      <button  type="submit" [ngStyle]="" [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'" [disabled]="contactForm.invalid">
+        {{text.buttonText()}}
+      </button>
     </form>
   </div>
 </section>

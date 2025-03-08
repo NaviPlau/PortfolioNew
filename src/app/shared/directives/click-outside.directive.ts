@@ -11,7 +11,6 @@ export class ClickOutsideDirective {
   onClick(targetElement: HTMLElement): void {
     const isInside = this.elementRef.nativeElement.contains(targetElement);
     if (!isInside && this.appClickOutside) {
-      console.log("ClickOutsideDirective: Calling the function to close the menu.");
       this.appClickOutside(); 
     }
   }
