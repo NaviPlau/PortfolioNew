@@ -1,0 +1,32 @@
+<section [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
+  <div class="content">
+    <div class="title-wrapper">
+      <h1 #legalNoticeTitle [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.inprintText().title}}</h1>
+      <mat-icon [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" class="arrow">arrow_back</mat-icon>
+    </div>
+    <h2 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.inprintText().info}}</h2>
+    <div class="personal">
+      <span>{{text.inprintText().personal.name}}</span>
+      <span>{{text.inprintText().personal.adress}}</span>
+      <span>{{text.inprintText().personal.city}}</span>
+      <span>{{text.inprintText().personal.country}}</span>
+    </div>
+    <div>
+      <h2 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.inprintText().contact.title}}</h2>
+      <a [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link" href="mailto:{{text.inprintText().contact.email}}"><p>{{text.inprintText().contact.email}}</p></a>
+    </div>
+    <div >
+      <h2 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.inprintText().contentLiability.title}}</h2>
+      <p>{{text.inprintText().contentLiability.description}}</p>
+    </div>
+    <div>
+      <h2 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.inprintText().linkLiability.title}}</h2>
+      <p>{{text.inprintText().linkLiability.description}}</p>
+    </div>
+    <div>
+      <h2 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.inprintText().copyright.title}}</h2>
+      <p>{{text.inprintText().copyright.description}}</p>
+    </div>
+  </div>
+
+</section>

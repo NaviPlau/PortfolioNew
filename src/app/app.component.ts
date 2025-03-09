@@ -1,5 +1,5 @@
-import { Component, ElementRef, HostListener, OnInit, Renderer2 } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./shared/components/header/header.component";
 import { BurgerMenuComponent } from "./shared/components/burger-menu/burger-menu.component";
 import { HeroComponent } from "./hero/hero.component";
@@ -9,14 +9,28 @@ import { ProjectsComponent } from "./projects/projects.component";
 import { ReferencesComponent } from "./references/references.component";
 import { ContactComponent } from "./contact/contact.component";
 import { FooterComponent } from "./shared/components/footer/footer.component";
+import { LegalNoticeComponent } from "./legal-notice/legal-notice.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, BurgerMenuComponent, HeroComponent, AboutComponent, SkillsComponent, ProjectsComponent, ReferencesComponent, ContactComponent, FooterComponent],
+  imports: [RouterOutlet, HeaderComponent, BurgerMenuComponent, HeroComponent, AboutComponent, SkillsComponent, ProjectsComponent, ReferencesComponent, ContactComponent, FooterComponent, LegalNoticeComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent  {
   title = 'portfolio';
+  router = inject(Router);
+  route = signal('');
+
+  constructor() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.route.set(event.urlAfterRedirects);
+      }
+    });
+  }
+
+  homeRoute = () => this.route() === '/';
+  legalRoute = () => this.route() === '/legal-notice' || this.route() === '/datenschutz';
 }
