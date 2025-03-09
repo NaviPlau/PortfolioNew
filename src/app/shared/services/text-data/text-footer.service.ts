@@ -32,7 +32,7 @@ export class TextFooterService {
       },
       inprint : {
         title : "Impressum",
-        route : "/impressum"
+        route : "impressum"
       }
     }
   } : {

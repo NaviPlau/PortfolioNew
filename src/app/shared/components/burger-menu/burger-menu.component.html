@@ -15,9 +15,9 @@
           class="swipe-icon">
           {{ getSwipeIcon() }}
         </mat-icon>
-        <a href="#" [attr.aria-label]="link" [ngStyle]="{ color: hoveredIndex === $index ? '#89BCD9' : 'inherit', 'font-weight': hoveredIndex === $index ? '600' : 'inherit' }">
+        <span (click)="navigator.navigateTo('', navigationLinks[links().indexOf(link)])"  [ngStyle]="{ color: hoveredIndex === $index ? '#89BCD9' : 'inherit', 'font-weight': hoveredIndex === $index ? '600' : 'inherit' }">
           {{ link }}
-        </a>
+        </span>
       </div>
       }
     </nav>

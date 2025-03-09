@@ -6,12 +6,13 @@ import { ScrollIntoService } from '../shared/services/scroll-view/scroll-into.se
 import { FormBuilder,FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { NavigatorService } from '../shared/services/navigation/navigator.service';
 
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatIcon, RouterLink],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatIcon],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -20,6 +21,7 @@ export class ContactComponent {
   text = inject(TextContactService);
   renderer = inject(Renderer2);
   scrollService = inject(ScrollIntoService);
+  navigator = inject(NavigatorService);
   @ViewChild('contactTitle', { static: true }) contactTitle!: ElementRef
   @ViewChild('contactFormElement', { static: true }) contactFormElement!: ElementRef
   sent = signal(false);

@@ -1,10 +1,11 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, ElementRef, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { trigger, transition, style, animate, keyframes } from '@angular/animations';
 import { ClickOutsideDirective } from '../../directives/click-outside.directive';
 import { CommonModule } from '@angular/common';
 import { LightDarkService } from '../../services/lightmodus/light-dark.service';
 import { LangService } from '../../services/language/lang.service';
+import { NavigatorService } from '../../services/navigation/navigator.service';
 @Component({
   selector: 'app-burger-menu',
   standalone: true,
@@ -52,6 +53,8 @@ export class BurgerMenuComponent {
   colors = ['#FFEEEE', '#FFB3B3', '#FF6666', '#D62C2C']; 
   lightmodus = inject(LightDarkService);
   lang = inject(LangService);
+  navigator = inject(NavigatorService);
+  navigationLinks = ["about", 'skills', 'projects', 'references', 'contact'];
 
   ngOnInit() {
     setInterval(() => {

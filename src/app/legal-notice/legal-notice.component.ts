@@ -3,6 +3,7 @@ import { LightDarkService } from '../shared/services/lightmodus/light-dark.servi
 import { CommonModule } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { TextLegalService } from '../shared/services/text-data/text-legal.service';
+import { NavigatorService } from '../shared/services/navigation/navigator.service';
 
 @Component({
   selector: 'app-legal-notice',
@@ -14,4 +15,5 @@ import { TextLegalService } from '../shared/services/text-data/text-legal.servic
 export class LegalNoticeComponent {
   text = inject(TextLegalService);
   lightmodus = inject(LightDarkService);
+  navigator = inject(NavigatorService);
 }

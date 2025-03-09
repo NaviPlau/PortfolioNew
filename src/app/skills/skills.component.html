@@ -1,5 +1,5 @@
-<section [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
-  <div class="content">
+<section id="skills" [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
+  <div class="content" >
 
     <div class="cubes-wrapper" #cube  (click)="$event.stopPropagation()">
       @for(skill of (text.showFrontendSkills() ? skillCubesFrontend : skillCubesBackend); track skill ) {

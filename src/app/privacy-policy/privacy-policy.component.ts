@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { LightDarkService } from '../shared/services/lightmodus/light-dark.service';
 import { TextPrivacyService } from '../shared/services/text-data/text-privacy.service';
+import { NavigatorService } from '../shared/services/navigation/navigator.service';
 
 @Component({
   selector: 'app-privacy-policy',
@@ -14,5 +15,6 @@ import { TextPrivacyService } from '../shared/services/text-data/text-privacy.se
 export class PrivacyPolicyComponent {
   lightmodus = inject(LightDarkService);
   text = inject(TextPrivacyService);
+  navigator = inject(NavigatorService);
 
 }

@@ -21,12 +21,22 @@ export class ScrollIntoService {
   }
 
 
-  scrollToElement(element: ElementRef, offset: number = 100) {
+  scrollToElement(element: ElementRef | null, offset: number | null) {
     if (element && element.nativeElement) {
+      if(offset == null) offset = 100
       window.scrollTo({
         top: element.nativeElement.getBoundingClientRect().top + window.scrollY - offset,
         behavior: 'smooth'
       });
+    }
+  }
+
+  navigatorScroll(elementId: string) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+        console.log('Element not found');
     }
   }
 

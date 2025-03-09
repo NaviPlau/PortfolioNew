@@ -156,6 +156,7 @@ a{
 }
 
 .link{
+  cursor: pointer;
   &:hover{
     transition: 200ms ease-in-out;
     text-decoration: underline;

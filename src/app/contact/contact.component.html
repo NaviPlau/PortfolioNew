@@ -1,5 +1,5 @@
 <section [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
-  <div class="content">
+  <div class="content" id="contact">
     <h1 #contactTitle [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.title()}}</h1>
     <div>
       <span>{{text.subtitle()}}</span>
@@ -94,7 +94,7 @@
         <input type="checkbox" formControlName="privacyPolicy" id="privacyPolicy" class="custom-checkbox">
         <label for="privacyPolicy" class="custom-checkbox-label">
           <span class="custom-checkbox-box" [ngClass]="lightmodus.light() ? 'checkbox-light' : 'checkbox-dark'"></span>
-          <span class="label-text">{{ text.formText().checkbox }} <a [routerLink]="text.policyRoute()" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link" href=""> {{ text.policy() }} </a></span>
+          <span class="label-text">{{ text.formText().checkbox }} <span (click)="navigator.navigateTo(text.policyRoute(), null)" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link" href=""> {{ text.policy() }} </span></span>
         </label>
         
         @if (privacyPolicy.touched && privacyPolicy.errors?.required) {

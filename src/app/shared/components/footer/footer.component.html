@@ -10,7 +10,7 @@
         <a href="{{ text.footerText().links.github.link}}" target="_blank" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link">{{ text.footerText().links.github.title }}</a>
         <a href="{{ text.footerText().links.linkedin.link}}" target="_blank" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link">{{ text.footerText().links.linkedin.title }}</a>
         <a href="mailto:{{ text.footerText().links.contact.email}}" target="_blank" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link">{{ text.footerText().links.contact.title }}</a>
-        <a [routerLink]="text.footerText().links.inprint.route" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link">{{ text.footerText().links.inprint.title }}</a>
+        <span (click)="navigator.navigateTo(text.footerText().links.inprint.route, null)" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link">{{ text.footerText().links.inprint.title }}</span>
       </div>
     </footer>
 </section>

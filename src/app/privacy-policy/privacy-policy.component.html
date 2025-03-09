@@ -3,7 +3,7 @@
   <div class="content">
     <div class="title-wrapper">
       <h1 #privacyPolicyTitle [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.privacyText().title}}</h1>
-      <mat-icon [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" class="arrow">arrow_back</mat-icon>
+      <mat-icon (click)="navigator.navigateTo('', null)" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" class="arrow">arrow_back</mat-icon>
     </div>
     <div>
       <h2 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.privacyText().personal.title}}</h2>
@@ -20,7 +20,6 @@
         <div>
           <h2 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.privacyText().use.title}}</h2>
           <h2 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.privacyText().use.visit.title}}</h2>
-          
         </div>
         <div>
           <h3>{{text.privacyText().use.visit.subtitle}}</h3>

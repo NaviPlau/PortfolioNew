@@ -1,8 +1,8 @@
 <section [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
-  <div class="content">
+  <div class="content" >
     <div class="title-wrapper">
       <h1 #legalNoticeTitle [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.inprintText().title}}</h1>
-      <mat-icon [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" class="arrow">arrow_back</mat-icon>
+      <mat-icon (click)="navigator.navigateTo('', null)" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" class="arrow">arrow_back</mat-icon>
     </div>
     <h2 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.inprintText().info}}</h2>
     <div class="personal">
