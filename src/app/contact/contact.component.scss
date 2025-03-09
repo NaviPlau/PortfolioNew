@@ -49,6 +49,22 @@ form{
   width: 100%;
   @include  display(flex, column, center, center);
   gap: 30px;
+  &.animate-fade-in-staggered {
+    opacity: 1;
+    transform: translateY(0);
+
+    .form-field {
+      opacity: 0;
+      transform: translateY(-20%);
+      animation: fadeInStaggered 1s ease-out forwards;
+    }
+
+    @for $i from 1 through 12 {
+      .form-field:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.2s}
+      }
+    }
+  }
 }
 
 .contact-field{
@@ -85,7 +101,6 @@ input, textarea, label{
   &:focus{
     outline: none;
   }
-  
 }
 
 textarea{
@@ -121,15 +136,11 @@ button{
   margin-top: 10px;
 }
 
-
 .custom-checkbox {
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
-
-
-
 
 .custom-checkbox-label {
   display: inline-flex;
@@ -147,9 +158,6 @@ button{
   width: fit-content;
 }
 
-
-
-
 .custom-checkbox-box {
   width: 20px ;
   height: 20px;
@@ -166,14 +174,12 @@ button{
   border: 2px solid $dark-hover;
 }
 
-
 .custom-checkbox-label:hover .checkbox-light {
   border-color: $light-hover;
 }
 .custom-checkbox-label:hover .checkbox-dark {
   border-color: $dark-normal;
 }
-
 
 .custom-checkbox:checked + .custom-checkbox-label .checkbox-light {
   background-color: $light-hover; 
@@ -183,7 +189,6 @@ button{
   background-color: $dark-hover;
   border-color: $dark-normal;
 }
-
 
 .custom-checkbox:checked + .custom-checkbox-label .checkbox-light::after,
 .custom-checkbox:checked + .custom-checkbox-label .checkbox-dark::after {
@@ -198,3 +203,51 @@ button{
   transform: rotate(45deg);
 }
 
+textarea[readonly] {
+  cursor: not-allowed;
+  text-align: center;
+  font-size: 24px;
+}
+
+
+.arrow-wrapper{
+  position: relative;
+  width: 100%;
+}
+
+.arrow{
+  height: auto;
+  width: auto;
+  border-radius: 20px;
+  padding: 16px 4px;
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  cursor: pointer;
+  animation: animate-arrow 2s ease-in-out forwards infinite;
+  @media (max-width: 800px){
+    font-size: 16px;
+    
+  }
+}
+
+@keyframes animate-arrow {
+  0%, 100%{
+    bottom: -20px;
+  }
+
+  50%{
+    bottom: 0px;
+  }
+}
+
+@keyframes fadeInStaggered {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

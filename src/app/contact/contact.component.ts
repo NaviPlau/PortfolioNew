@@ -1,15 +1,16 @@
-import { Component, ElementRef, inject, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, Renderer2, signal, ViewChild } from '@angular/core';
 import { LightDarkService } from '../shared/services/lightmodus/light-dark.service';
 import { CommonModule } from '@angular/common';
 import { TextContactService } from '../shared/services/text-data/text-contact.service';
 import { ScrollIntoService } from '../shared/services/scroll-view/scroll-into.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatIcon } from '@angular/material/icon';
 
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatIcon],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -19,6 +20,8 @@ export class ContactComponent {
   renderer = inject(Renderer2);
   scrollService = inject(ScrollIntoService);
   @ViewChild('contactTitle', { static: true }) contactTitle!: ElementRef
+  @ViewChild('contactFormElement', { static: true }) contactFormElement!: ElementRef
+  sent = signal(false);
 
   contactForm!: any;
   fb = inject(FormBuilder);
@@ -42,6 +45,8 @@ export class ContactComponent {
 
   ngAfterViewInit() {
     this.scrollService.observeElement(this.contactTitle, this.renderer, 'animated-title');
+    this.scrollService.observeElement(this.contactFormElement, this.renderer, 'animate-fade-in-staggered');
+
   }
 
   submit(){
@@ -49,6 +54,13 @@ export class ContactComponent {
     
     if (this.contactForm.valid) {
       console.log(this.contactForm.value);
+      this.sent.set(true);
+      setTimeout(() => {
+        this.sent.set(false);
+        this.contactForm.reset();
+      }, 3000);
     }
   }
+
+
 }

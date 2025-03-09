@@ -32,25 +32,23 @@ button {
     opacity: 0.5;
     cursor: not-allowed;
     position: relative;
-
     &::after {
       content: "Invalid Form";
       position: absolute;
-      top: -40px; 
+      top: -25px; 
       left: 50%;
       transform: translateX(-50%);
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
+      border-radius: 20px;
       padding: 5px 10px;
-      font-size: 12px;
-      border-radius: 5px;
+      font-size: 14px;
       white-space: nowrap;
       opacity: 0;
-      transition: opacity 0.3s ease-in-out;
     }
 
     &:hover::after {
       opacity: 1;
+      transition: 0.2s ease-in-out;
+      
     }
   }
 
@@ -68,6 +66,14 @@ button {
       border-left: 2px solid white;
       border-bottom: 2px solid rgba(255, 255, 255, 0.726);
       transform: translate(2px, 2px);
+      &:disabled{
+        border-left: 6px solid white;
+        border-bottom: 6px solid rgba(255, 255, 255, 0.726);
+        &::after{
+          background-color: $dark-background;
+          color: $dark-normal;
+        }
+      }
     }
   }
 
@@ -84,6 +90,14 @@ button {
       border-left: 2px solid black;
       border-bottom: 2px solid black;
       transform: translate(2px, 2px);
+      &:disabled{
+        border-left: 6px solid black;
+        border-bottom: 6px solid black;
+        &::after{
+          background-color: $light-background;
+          color: $light-hover;
+        }
+      }
     }
 
   }
@@ -159,5 +173,36 @@ button {
     text-underline-offset: 8px;
     text-decoration-color: $dark-normal;
     text-decoration-thickness: 3px;
+  }
+}
+
+
+.scrollbar-light{
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $light-hover;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $light-normal;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: $light-normal;
+  }
+}
+
+.scrollbar-dark{
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $dark-hover;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $dark-normal;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: $dark-normal;
   }
 }

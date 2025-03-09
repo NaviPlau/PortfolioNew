@@ -7,7 +7,6 @@ import { LangService } from '../language/lang.service';
 export class TextContactService {
   lang = inject(LangService)
   constructor() { }
-  errorTooltip = computed(() =>(this.lang.language() === 'de' ? "Alle Felder sind erforderlich" : "All fields are required"));
   policy = computed(() =>(this.lang.language() === 'de' ? "Datenschutzerklaerung! " : "Privacy Policy!"));
   textLength = computed(() =>(this.lang.language() === 'de' ? "Zeichen übrig" : "Characters left"));
   title = computed(() =>(this.lang.language() === 'de' ? "Kontakt" : "Contact"))
@@ -19,6 +18,7 @@ export class TextContactService {
     email: "Dein E-Mail",
     message : "Dein nachricht",
     checkbox: "Ich akzeptiere die ",
+    success: {title: "Erfolgreich gesendet", message: "Dein Nachricht wurde erfolgreich gesendet."},
     errors : {
       name : {
         required: "Bitte geben Sie Ihren Namen ein.",
@@ -42,6 +42,7 @@ export class TextContactService {
     email: "Your email",
     message : "Your message",
     checkbox: "I accept the ",
+    success: {title: "Successfully sent", message: "Your message was successfully sent."},
     errors : {
       name : {
         required: "Please enter your name.",

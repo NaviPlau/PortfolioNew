@@ -29,5 +29,12 @@ export class ScrollIntoService {
       });
     }
   }
+
+  mainScrollTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 }
 

@@ -36,7 +36,7 @@ export class TextReferencesService {
       project: "Kochwelt"
     },
     {
-      description: "Ich hatte die Gelegenheit, mit Paul in einem Gruppenprojekt zusammenzuarbeiten, bei dem wir gemeinsam programmiert haben. Paul war von Anfang an eine große Bereicherung für unser Team. Seine Programmierfähigkeiten sind hervorragend und er hat stets mit großer Präzision und Kreativität gearbeitet. Besonders beeindruckend fand ich seine Fähigkeit, komplexe Probleme schnell zu durchdringen und praktikable Lösungen zu entwickeln.Paul hat nicht nur durch seine technischen Fähigkeiten überzeugt, sondern auch durch seine Teamfähigkeit. Er hat immer ein offenes Ohr für die Ideen anderer gehabt und aktiv zur Verbesserung des Projekts beigetragen. Seine ruhige und professionelle Art hat die Zusammenarbeit sehr angenehm gemacht und das Team motiviert. Dank Pauls Einsatz und seinem Engagement haben wir das Projekt erfolgreich abgeschlossen. Ich würde jederzeit und gerne wieder mit Paul in einen Projekt zusammenarbeiten.",
+      description: "Ich hatte die Gelegenheit, mit Paul an einem Gruppenprojekt zusammenzuarbeiten. Seine Programmierfähigkeiten sind herausragend, und er arbeitet stets mit großer Präzision und Kreativität. Besonders beeindruckt hat mich seine Fähigkeit, komplexe Probleme schnell zu erfassen und praktische Lösungen zu entwickeln. Er war immer offen für die Ideen anderer und hat aktiv zur Verbesserung des Projekts beigetragen. Sein ruhiges und professionelles Auftreten machte die Zusammenarbeit sehr angenehm und motivierte das Team. Ich würde jederzeit wieder gerne mit Paul an einem Projekt arbeiten.",
       referencer: "Albin S.",
       job: "Team Partner",
       project: "Da-Bubble"
@@ -66,7 +66,7 @@ export class TextReferencesService {
       project: "Kochwelt"
     },
     {
-      description: "I had the opportunity to collaborate with Paul on a group project. Paul was a great asset to our team. His programming skills are outstanding, and he always worked with great precision and creativity. I was particularly impressed by his ability to quickly grasp complex problems and develop practical solutions. Paul not only stood out for his technical skills but also for his teamwork. He was always open to the ideas of others and actively contributed to improving the project. His calm and professional demeanor made working with him very pleasant and motivated the team. I would gladly work with Paul on a project again at any time. ",
+      description: "I had the opportunity to collaborate with Paul on a group project. His programming skills are outstanding, and he always works with great precision and creativity. I was particularly impressed by his ability to quickly grasp complex problems and develop practical solutions. He was always open to the ideas of others and actively contributed to improving the project. His calm and professional demeanor made working with him very pleasant and motivated the team. I would gladly work with Paul on a project again at any time. ",
       referencer: "Albin S.",
       job: "Team Partner",
       project: "Da- Bubble"
