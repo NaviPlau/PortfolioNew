@@ -3,14 +3,15 @@ import { LightDarkService } from '../shared/services/lightmodus/light-dark.servi
 import { CommonModule } from '@angular/common';
 import { TextContactService } from '../shared/services/text-data/text-contact.service';
 import { ScrollIntoService } from '../shared/services/scroll-view/scroll-into.service';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder,FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatIcon],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatIcon, RouterLink],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

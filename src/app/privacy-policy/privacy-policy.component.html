@@ -1,0 +1,66 @@
+<section [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
+
+  <div class="content">
+    <div class="title-wrapper">
+      <h1 #privacyPolicyTitle [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.privacyText().title}}</h1>
+      <mat-icon [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" class="arrow">arrow_back</mat-icon>
+    </div>
+    <div>
+      <h2 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.privacyText().personal.title}}</h2>
+      <div class="personal">
+        <span>{{text.privacyText().personal.name}}</span>
+        <span>{{text.privacyText().personal.adress}}</span>
+        <span>{{text.privacyText().personal.city}}</span>
+        <span>{{text.privacyText().personal.country}}</span>
+      </div>
+    </div>
+    <div class="use">
+      <div class="visit">
+        <div>
+          <h2 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.privacyText().use.title}}</h2>
+          <h2 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.privacyText().use.visit.title}}</h2>
+          
+        </div>
+        <div>
+          <h3>{{text.privacyText().use.visit.subtitle}}</h3>
+          <ul>
+            @for(info of text.privacyText().use.visit.list;  track info){
+              <li>{{info}}</li>
+            }
+          </ul>
+        </div>
+        <div>
+          <h3>{{text.privacyText().use.visit.subtitle2}}</h3>
+          <ul>
+            @for(info of text.privacyText().use.visit.list2;  track info){
+              <li>{{info}}</li>
+            }
+          </ul>
+        </div>
+        <h3>{{text.privacyText().use.visit.subtitle3}}</h3>
+      </div>
+      <div>
+        <h2 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.privacyText().use.contactForm.title}}</h2>
+        <h3>{{text.privacyText().use.contactForm.subtitle}}</h3>
+      </div>
+    </div>
+    <div>
+      <h2 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.privacyText().disclosure.title}}</h2>
+      <h3>{{text.privacyText().disclosure.subtitle}}</h3>
+      <ul>
+        @for(info of text.privacyText().disclosure.list;  track info){
+          <li>{{info}}</li>
+        }
+      </ul>
+    </div>
+    <div>
+      <h2 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.privacyText().rights.title}}</h2>
+      <h3>{{text.privacyText().rights.subtitle}}</h3>
+      <ul>
+        @for(info of text.privacyText().rights.list;  track info){
+          <li>{{info}}</li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

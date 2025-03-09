@@ -94,7 +94,7 @@
         <input type="checkbox" formControlName="privacyPolicy" id="privacyPolicy" class="custom-checkbox">
         <label for="privacyPolicy" class="custom-checkbox-label">
           <span class="custom-checkbox-box" [ngClass]="lightmodus.light() ? 'checkbox-light' : 'checkbox-dark'"></span>
-          <span class="label-text">{{ text.formText().checkbox }} <a [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link" href=""> {{ text.policy() }} </a></span>
+          <span class="label-text">{{ text.formText().checkbox }} <a [routerLink]="text.policyRoute()" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link" href=""> {{ text.policy() }} </a></span>
         </label>
         
         @if (privacyPolicy.touched && privacyPolicy.errors?.required) {

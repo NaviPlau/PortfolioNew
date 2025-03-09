@@ -14,23 +14,10 @@ import { LegalNoticeComponent } from "./legal-notice/legal-notice.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, BurgerMenuComponent, HeroComponent, AboutComponent, SkillsComponent, ProjectsComponent, ReferencesComponent, ContactComponent, FooterComponent, LegalNoticeComponent],
+  imports: [RouterOutlet, HeaderComponent, BurgerMenuComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent  {
   title = 'portfolio';
-  router = inject(Router);
-  route = signal('');
-
-  constructor() {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.route.set(event.urlAfterRedirects);
-      }
-    });
-  }
-
-  homeRoute = () => this.route() === '/';
-  legalRoute = () => this.route() === '/legal-notice' || this.route() === '/datenschutz';
 }
