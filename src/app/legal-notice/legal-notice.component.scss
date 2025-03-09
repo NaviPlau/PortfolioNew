@@ -46,13 +46,29 @@ p, .personal{
 h1{
   font-size: 56px;
   line-height: 56px;
+  @media(max-width: 550px){
+    font-size: 36px;
+    line-height: 36px;
+  }
+  @media(max-width: 400px){
+    font-size: 28px;
+  }
+}
+
+h2{
+  @media(max-width: 550px){
+    font-size: 20px;
+  }
+  @media(max-width: 400px){
+    font-size: 18px;
+  }
 }
 
 @keyframes move-left{
   0% ,100%{
-    margin-right :50px;
+    margin-right :0px;
   }
   50%{
-    margin-right: 70px;
+    margin-right: 20px;
   }
 }

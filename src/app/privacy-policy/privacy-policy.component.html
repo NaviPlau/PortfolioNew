@@ -12,6 +12,7 @@
         <span>{{text.privacyText().personal.adress}}</span>
         <span>{{text.privacyText().personal.city}}</span>
         <span>{{text.privacyText().personal.country}}</span>
+        <span><a href="mailto:{{text.privacyText().personal.email}}" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link">{{text.privacyText().personal.email}}</a></span>
       </div>
     </div>
     <div class="use">

@@ -10,7 +10,7 @@ export class TextPrivacyService {
 
 
   privacyText = computed(() => (this.lang.language() === 'de' ? {
-    title: "Datenschutzerklärung",
+    title: "Datenschutz",
     personal: {
       title: "1. Verantwortlicher für die Datenverarbeitung",
       name: "Paul Ivan",
