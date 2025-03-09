@@ -1,0 +1,16 @@
+<section [ngClass]="lightmodus.light() ? 'light-background border-footer-light' : 'dark-background border-footer-dark'" >
+    <footer >
+      <div class="info">
+        <a routerLink="/" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link"><span>{{ text.footerText().name }}</span></a>
+        <span>{{ text.footerText().job }}</span>
+        <a href="{{ text.footerText().location.map}}" target="_blank" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link">{{ text.footerText().location.title}}</a>
+      </div>
+      <a routerLink="/"><span [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'" class="copyright">{{ text.footerText().copyright }}</span></a>
+      <div class="links">
+        <a href="{{ text.footerText().links.github.link}}" target="_blank" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link">{{ text.footerText().links.github.title }}</a>
+        <a href="{{ text.footerText().links.linkedin.link}}" target="_blank" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link">{{ text.footerText().links.linkedin.title }}</a>
+        <a href="mailto:{{ text.footerText().links.contact.email}}" target="_blank" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link">{{ text.footerText().links.contact.title }}</a>
+        <a [routerLink]="text.footerText().links.inprint.route" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link">{{ text.footerText().links.inprint.title }}</a>
+      </div>
+    </footer>
+</section>

@@ -26,10 +26,6 @@ h1{
   opacity: 0;
 }
 
-a{
-  text-decoration: none;
-}
-
 .animated-title{
   animation: animate-title 1s ease-in-out forwards;
 }
@@ -101,11 +97,16 @@ input, textarea, label{
   &:focus{
     outline: none;
   }
+  @media(max-width: 800px){
+    font-size: 16px;
+  }
 }
 
 textarea{
   resize: none;
   min-height: 300px;
+  scrollbar-width: none;
+  padding-bottom: 20px;
 }
 
 input:-webkit-autofill {
@@ -251,3 +252,4 @@ textarea[readonly] {
     transform: translateY(0);
   }
 }
+

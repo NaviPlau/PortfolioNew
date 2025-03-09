@@ -9,16 +9,19 @@
   @include display(flex, column, space-between, center);
   gap: 10px;
   border-radius: 30px;
+  @media(max-width: 700px){
+    min-width: 80vw;
+    max-width: 90vw;
+  }
 }
 
 
 .info-wrapper{
   width: 90%;
   @include display(flex, row, space-between, center);
-}
-
-p{
-  font-size: 18px;
+  @media(max-width: 700px){
+    flex-direction: column;
+  }
 }
 
 .shadow-light{

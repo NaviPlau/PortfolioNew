@@ -151,28 +151,30 @@ button {
   color: white;
 }
 
-.policy-light {
-  color: black;
-  font-weight: 800;
+a{
+  text-decoration: none;
+}
 
-  &:hover {
+.link{
+  &:hover{
     transition: 200ms ease-in-out;
     text-decoration: underline;
     text-underline-offset: 8px;
-    text-decoration-color: $light-hover;
     text-decoration-thickness: 3px;
   }
 }
 
-.policy-dark {
-  color: white;
-
+.link-light {
+  color: black;
   &:hover {
-    transition: 200ms ease-in-out;
-    text-decoration: underline;
-    text-underline-offset: 8px;
+    text-decoration-color: $light-hover;
+  }
+}
+
+.link-dark {
+  color: white;
+  &:hover {
     text-decoration-color: $dark-normal;
-    text-decoration-thickness: 3px;
   }
 }
 

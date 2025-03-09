@@ -12,6 +12,12 @@ export class TextReferencesService {
 
   references = computed(() => this.lang.language() === 'de' ? [
     {
+      description: "Ich hatte die Gelegenheit, mit Paul an einem Gruppenprojekt zusammenzuarbeiten. Seine Programmierfähigkeiten sind herausragend, und er arbeitet stets mit großer Präzision und Kreativität. Besonders beeindruckt hat mich seine Fähigkeit, komplexe Probleme schnell zu erfassen und praktische Lösungen zu entwickeln. Er war immer offen für die Ideen anderer und hat aktiv zur Verbesserung des Projekts beigetragen. Sein ruhiges und professionelles Auftreten machte die Zusammenarbeit sehr angenehm und motivierte das Team. Ich würde jederzeit wieder gerne mit Paul an einem Projekt arbeiten.",
+      referencer: "Albin S.",
+      job: "Team Partner",
+      project: "Da-Bubble"
+    },
+    {
       description: 'Paul ist ein sympathischer und kommunikativer Teamplayer, der mit hoher Motivation und Zielstrebigkeit arbeitet. In Pair-Programming-Sessions hat er mehrfach bewiesen, dass er sich schnell in komplexe Themen einarbeiten und effizient Bugs lösen kann. Eine wertvolle Bereicherung für jedes Team!',
       referencer: 'Benjamin T.',
       job: 'Fullstack Developer',
@@ -34,13 +40,14 @@ export class TextReferencesService {
       referencer: "David P.",
       job: "Team Partner",
       project: "Kochwelt"
-    },
+    }
+    ] : [
     {
-      description: "Ich hatte die Gelegenheit, mit Paul an einem Gruppenprojekt zusammenzuarbeiten. Seine Programmierfähigkeiten sind herausragend, und er arbeitet stets mit großer Präzision und Kreativität. Besonders beeindruckt hat mich seine Fähigkeit, komplexe Probleme schnell zu erfassen und praktische Lösungen zu entwickeln. Er war immer offen für die Ideen anderer und hat aktiv zur Verbesserung des Projekts beigetragen. Sein ruhiges und professionelles Auftreten machte die Zusammenarbeit sehr angenehm und motivierte das Team. Ich würde jederzeit wieder gerne mit Paul an einem Projekt arbeiten.",
+      description: "I had the opportunity to collaborate with Paul on a group project. His programming skills are outstanding, and he always works with great precision and creativity. I was particularly impressed by his ability to quickly grasp complex problems and develop practical solutions. He was always open to the ideas of others and actively contributed to improving the project. His calm and professional demeanor made working with him very pleasant and motivated the team. I would gladly work with Paul on a project again at any time. ",
       referencer: "Albin S.",
       job: "Team Partner",
-      project: "Da-Bubble"
-    }] : [
+      project: "Da- Bubble"
+    },
     {
       description: 'Paul is a friendly and communicative team player who works with great motivation and determination. In pair programming sessions, he has repeatedly proven that he can quickly grasp complex topics and efficiently fix bugs. A valuable asset to any team!',
       referencer: 'Benjamin T.',
@@ -64,12 +71,6 @@ export class TextReferencesService {
       referencer: "David P.",
       job: "Team Partner",
       project: "Kochwelt"
-    },
-    {
-      description: "I had the opportunity to collaborate with Paul on a group project. His programming skills are outstanding, and he always works with great precision and creativity. I was particularly impressed by his ability to quickly grasp complex problems and develop practical solutions. He was always open to the ideas of others and actively contributed to improving the project. His calm and professional demeanor made working with him very pleasant and motivated the team. I would gladly work with Paul on a project again at any time. ",
-      referencer: "Albin S.",
-      job: "Team Partner",
-      project: "Da- Bubble"
     }
   ])
 }

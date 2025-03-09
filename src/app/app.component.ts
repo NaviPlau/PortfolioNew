@@ -8,11 +8,12 @@ import { SkillsComponent } from "./skills/skills.component";
 import { ProjectsComponent } from "./projects/projects.component";
 import { ReferencesComponent } from "./references/references.component";
 import { ContactComponent } from "./contact/contact.component";
+import { FooterComponent } from "./shared/components/footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, BurgerMenuComponent, HeroComponent, AboutComponent, SkillsComponent, ProjectsComponent, ReferencesComponent, ContactComponent],
+  imports: [RouterOutlet, HeaderComponent, BurgerMenuComponent, HeroComponent, AboutComponent, SkillsComponent, ProjectsComponent, ReferencesComponent, ContactComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
