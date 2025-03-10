@@ -2,14 +2,14 @@
   <div class="content" >
     <div class="title">
       <h1 aria-label="Paul Ivan">
-        @for(letter of titleChars(); track $index){
+        @for(letter of text.titleChars(); track $index){
         <span [style.--i]="$index" class="letter" [ngClass]="lightmodus.light() ? 'light-lupe' : 'dark-lupe'">{{ letter
           === ' ' ? '&nbsp;' :
           letter }}</span>
         }
       </h1>
       <h2 aria-label="Fullstack Developer">
-        @for(letter of subtitleChars(); track $index){
+        @for(letter of text.subtitleChars(); track $index){
         <span class="letter" [style.--i]="$index" [ngClass]="lightmodus.light() ? 'light-lupe' : 'dark-lupe'">{{ letter
           === ' ' ? '&nbsp;' :
           letter }}</span>
@@ -23,18 +23,9 @@
 
       <button [attr.aria-label]="lang.language() === 'de' ? 'Kontaktieren Sie mich' : 'Contact Me'" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="onButtonClick()"
         [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'">
-        @if(lang.language() === 'de') {
-         <span>Kontaktieren Sie mich</span> 
-        }@else(){
-          <span>Contact Me</span>
-        }
-
-        
+        {{text.buttonText()}}
       </button>
-      TODO: Signal for contact me
     </div>
-    <div>
-      <mat-icon>arrow_downward</mat-icon>
-    </div>
+      <mat-icon class="arrow" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" (click)="scrollService.navigatorScroll('about')">arrow_downward</mat-icon>
   </div>
 </section>

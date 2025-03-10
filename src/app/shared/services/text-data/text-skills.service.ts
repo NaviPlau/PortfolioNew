@@ -5,7 +5,6 @@ import { LangService } from '../language/lang.service';
   providedIn: 'root'
 })
 export class TextSkillsService {
-
   lang = inject(LangService)
   showFrontendSkills = signal(true)
 

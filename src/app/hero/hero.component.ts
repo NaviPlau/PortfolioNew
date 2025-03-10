@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { LangService } from '../shared/services/language/lang.service';
 import { MatIcon } from '@angular/material/icon';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { ScrollIntoService } from '../shared/services/scroll-view/scroll-into.service';
+import { TextHeroService } from '../shared/services/text-data/text-hero.service';
 
 @Component({
   selector: 'app-hero',
@@ -31,17 +33,12 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 export class HeroComponent {
   lightmodus = inject(LightDarkService);
   lang = inject(LangService);
-
-  title = computed(() =>(this.lang.language() === 'de' ? "Hallo, ich bin Paul Ivan" : "Hi, I'm Paul Ivan"));
-  subtitle = computed(() =>(this.lang.language() === 'de' ? "Fullstack Entwickler" : "Fullstack Developer"));
-
-  titleChars = computed(() => [...this.title()]);
-  subtitleChars = computed(() => [...this.subtitle()]);
-
+  scrollService = inject(ScrollIntoService);
+  text = inject(TextHeroService);
   hoveredButton = signal(false);
+
   isMobile = signal(this.detectMobile()); 
   animationState = signal<'default' | 'hover'>('default'); 
-
   iconColor = computed(() => this.lightmodus.light() ? 
     (this.animationState() === 'hover' ? '#ff834f' : '#89BCD9') :  
     (this.animationState() === 'hover' ? 'white' : '#3dcfb6')     

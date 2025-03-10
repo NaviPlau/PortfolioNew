@@ -1,30 +1,23 @@
 <section [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
   <div class="content" #about id="about">
-    <div #text class="text">
-      TODO: write text
-
+    <div #texts class="text">
       <div class="paragraph-wrapper">
-        <p class="subtitle" [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{aboutSection().subtitle}}</p>
         <div class="paragraphs" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'">
-          <h1 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{aboutSection().title}}</h1>
-          <p>{{aboutSection().paragraphs.about}}</p>
+          <h1 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.aboutSection().title}}</h1>
+          <p>{{text.aboutSection().paragraphs.about}}</p>
           <div class="paragraph">
-            <p>{{aboutSection().paragraphs.location}}</p>
+            <p>{{text.aboutSection().paragraphs.location}}</p>
             <a href="https://g.co/kgs/21ttEKf" target="_blank"><app-location></app-location></a>
           </div>
           <div class="paragraph">
-            <p>{{aboutSection().paragraphs.challenge}}</p>
+            <p>{{text.aboutSection().paragraphs.challenge}}</p>
             <a href=""><app-head></app-head> </a>
-            
           </div>
           <div class="paragraph">
-            <p>{{aboutSection().paragraphs.checkmark}}</p>
+            <p>{{text.aboutSection().paragraphs.checkmark}}</p>
             <a href=""><app-checkmark></app-checkmark></a>
-            
           </div>
-          <button (click)="videoService.videoOpen.set(true)" [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'"	>{{buttonText()}}</button>
-           TODO: Create And Add Video In A Videoplayer
-           
+          <button (click)="videoService.videoOpen.set(true)" [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'"	>{{text.buttonText()}}</button>
         </div>
         
       </div>
@@ -38,5 +31,4 @@
   @if(videoService.videoOpen()){
     <app-video></app-video>
   }
-  
 </section>

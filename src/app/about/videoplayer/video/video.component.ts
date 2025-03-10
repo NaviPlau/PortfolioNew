@@ -5,6 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { ClickOutsideDirective } from '../../../shared/directives/click-outside.directive';
 import { VideoService } from '../../../shared/services/video-service/video.service';
+import { TextAboutService } from '../../../shared/services/text-data/text-about.service';
 
 @Component({
   selector: 'app-video',
@@ -15,7 +16,7 @@ import { VideoService } from '../../../shared/services/video-service/video.servi
 })
 export class VideoComponent implements AfterViewInit, OnInit {
   lightmodus = inject(LightDarkService)
-  lang = inject(LangService)
+  text = inject(TextAboutService)
   videoService = inject(VideoService)
   overlayOpen = signal(true)
   @ViewChild('video') video!: ElementRef<HTMLVideoElement>
@@ -44,21 +45,6 @@ export class VideoComponent implements AfterViewInit, OnInit {
       console.error("Video element is not yet initialized.");
     }
   }
-
-  videoData = computed(() => this.lang.language() === 'de' ? 'assets/videos/paul.mp4' : 'assets/videos/paul-en.mp4')
-  videoInfo = computed(() => this.lang.language() === 'de' ? {
-    title: "Das bin ich",
-    subtitle: "Paul Ivan",
-    description: "Hier können sie mich besser  kennenlernen und ein rundgang ein Paar meiner Projekte",
-    controls: ['Abspielen', 'Schließen']
-  } : {
-    title: "Meet me",
-    subtitle: "Paul Ivan",
-    description: "Here you get a peek at who i am and a few of my projects",
-    controls: ['Play', 'Close']
-  }
-  )
-
 
   closeVideo = () => {
     this.videoService.videoOpen.set(false);
