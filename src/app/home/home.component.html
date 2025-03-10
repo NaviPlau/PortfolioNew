@@ -1,6 +1,23 @@
-<app-hero></app-hero>
-<app-about></app-about>
-<app-skills></app-skills>
-<app-projects></app-projects>
-<app-references></app-references>
-<app-contact></app-contact>
+
+  <app-hero></app-hero>
+
+
+<div appLazyload (isVisible)="aboutVisible = true">
+  <app-about *ngIf="aboutVisible"></app-about>
+</div>
+
+<div appLazyload (isVisible)="skillsVisible = true">
+  <app-skills *ngIf="skillsVisible"></app-skills>
+</div>
+
+<div appLazyload (isVisible)="projectsVisible = true">
+  <app-projects *ngIf="projectsVisible"></app-projects>
+</div>
+
+<div appLazyload (isVisible)="referencesVisible = true">
+  <app-references *ngIf="referencesVisible"></app-references>
+</div>
+
+<div appLazyload (isVisible)="contactVisible = true">
+  <app-contact *ngIf="contactVisible"></app-contact>
+</div>

@@ -1,0 +1,64 @@
+@use '../styles/mixins' as *;
+
+.custom-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.custom-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  padding: 0px 0px;
+  width: fit-content;
+  align-self: flex-start;
+  width: fit-content;
+  gap: 20px;
+}
+
+.custom-checkbox-box {
+  width: 20px ;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  position: relative;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.checkbox-light {
+  border: 2px solid $light-normal;
+}
+.checkbox-dark {
+  border: 2px solid $dark-hover;
+}
+
+.custom-checkbox-label:hover .checkbox-light {
+  border-color: $light-hover;
+}
+.custom-checkbox-label:hover .checkbox-dark {
+  border-color: $dark-normal;
+}
+
+.custom-checkbox:checked + .custom-checkbox-label .checkbox-light {
+  background-color: $light-hover; 
+  border-color: $light-normal;
+}
+.custom-checkbox:checked + .custom-checkbox-label .checkbox-dark {
+  background-color: $dark-hover;
+  border-color: $dark-normal;
+}
+
+.custom-checkbox:checked + .custom-checkbox-label .checkbox-light::after,
+.custom-checkbox:checked + .custom-checkbox-label .checkbox-dark::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}

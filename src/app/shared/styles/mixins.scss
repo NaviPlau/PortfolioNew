@@ -54,4 +54,10 @@ $dark-normal : #3dcfb6;
 $dark-hover : #27554d;
 $dark-background : #1c1c1c;
 
+.dark-mode {
+  --text-color: $dark-normal;
+}
 
+.light-mode {
+  --text-color: $light-normal;
+}

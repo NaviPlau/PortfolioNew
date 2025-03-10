@@ -1,5 +1,5 @@
 @use '../shared/styles/mixins.scss' as *;
-
+@use '../shared/styles/keyframes.scss' as *;
 section {
   @include display(flex, column, center, center);
   width: 100%;
@@ -64,11 +64,3 @@ h2{
   }
 }
 
-@keyframes move-left{
-  0% ,100%{
-    margin-right :0px;
-  }
-  50%{
-    margin-right: 20px;
-  }
-}

@@ -1,4 +1,5 @@
 @use '../shared/styles/mixins.scss' as *;
+@use '../shared/styles/keyframes.scss' as *;
 
 section {
   @include display(flex, column, center, center);
@@ -41,8 +42,6 @@ h1{
   padding: 8px 0px;
 }
 
-
-
 .project{
   width: 100%;
   text-align: center;
@@ -63,7 +62,6 @@ h1{
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
 }
-
 
 .border-light-reverse {
   border: 3px solid black;
@@ -93,28 +91,9 @@ h1{
   animation: animate-title 1s ease-in-out forwards;
 }
 
-@keyframes animate-title {
-  from {
-    opacity: 0;
-    transform: translateY(-50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 
 .animate-project{
   animation: rotate-project 1s ease-in-out forwards;
 }
 
-@keyframes rotate-project {
-  from {
-    opacity: 0;
-    transform: rotateX(90deg);
-  }
-  to {
-    transform: rotateX(0deg);
-    opacity: 1;
-  }
-}

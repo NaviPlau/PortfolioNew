@@ -1,5 +1,7 @@
 @use '../../../shared/styles/mixins' as *;
 @use '../../../shared/styles/shared-svg.scss' as *;
+@use '../../../shared/styles/keyframes.scss' as *;
+
 .header{
   max-width: 1440px;
   width: 100%;
@@ -48,31 +50,9 @@
   }
 }
 
-@keyframes colorPulseDark {
-  0%, 100% {
-    color: $dark-normal;
-    outline: 0.9px solid white;
-    opacity: 1;
-  }
-  50% {
-    color: white;
-    outline: 0.9px solid $dark-normal;
-    opacity: 0.7;
-  }
-}
 
-@keyframes colorPulseLight {
-  0%, 100% {
-    color: black;
-    opacity: 1;
-    outline: 0.9px solid black
-  }
-  50% {
-    color: $light-hover;
-    opacity: 0.7;
-    outline: 0.9px solid $light-hover
-  }
-}
+
+
 
 
 .svg{

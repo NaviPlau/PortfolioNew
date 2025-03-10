@@ -1,4 +1,5 @@
 @use "../shared/styles/mixins" as *;
+@use "../shared/styles/keyframes" as *;
 
 section {
   height: 100%;
@@ -49,36 +50,10 @@ h2 {
   }
 }
 
-
-
-
 .letter {
   display: inline-block;
   transition: color 20ms ease-in-out, text-transform 20ms ease-in-out;
 }
-
-@media (pointer: coarse) {
-  .light .letter {
-    display: inline-block;
-    animation: textAnimationLight calc(var(--total-time)) ease-in-out infinite;
-    animation-delay: calc(var(--i) * 200ms);
-  }
-
-  .dark .letter {
-    display: inline-block;
-    animation: textAnimationDark calc(var(--total-time)) ease-in-out infinite;
-    animation-delay: calc(var(--i) * 200ms);
-  }
-
-  h1,
-  h2 {
-    --letter-count: 12;
-    --animation-time: 2s;
-    --stagger-time: calc(var(--letter-count) * 100ms);
-    --total-time: calc(var(--animation-time) + var(--stagger-time));
-  }
-}
-
 
 .letter:hover {
   rotate: 10deg;
@@ -88,7 +63,6 @@ h2 {
 
 .dark-lupe {
   cursor: url('../../../public/img/lupe-dark.png') 32 32, auto;
-
   &:hover {
     color: $dark-normal;
   }
@@ -96,59 +70,19 @@ h2 {
 
 .light-lupe {
   cursor: url('../../../public/img/lupe-light.png') 32 32, auto;
-
   &:hover {
     color: $light-normal;
   }
 }
 
-
-@keyframes textAnimationLight {
-  0% {
-    color: inherit;
-    transform: rotate(0deg);
-  }
-
-  50% {
-    color: $light-normal;
-    transform: rotate(10deg);
-  }
-
-  100% {
-    color: inherit;
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes textAnimationDark {
-  0% {
-    color: inherit;
-    transform: rotate(0deg);
-  }
-
-  50% {
-    color: $dark-normal;
-    transform: rotate(10deg);
-  }
-
-  100% {
-    color: inherit;
-    transform: rotate(0deg);
-  }
-}
-
-
 .button-wrapper {
   @include display(flex, column, center, center);
   margin-top: 40px;
-
   @media (max-height: 400px) {
     margin-top: 20px;
   }
-
   button {
     font-size: 24px;
-
     @media (max-width: 700px) {
       font-size: 16px;
       padding: 5px 10px;

@@ -1,4 +1,5 @@
 @use '../shared/styles/mixins.scss' as *;
+@use '../shared/styles/keyframes.scss' as *;
 
 section {
   @include display(flex, column, center, center);
@@ -24,16 +25,7 @@ section {
   }
 }
 
-@keyframes fadeInStaggered {
-  0% {
-    opacity: 0;
-    transform: translateY(-20%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 
 .cubes-wrapper {
   @include display(flex, row, center, center);
