@@ -71,7 +71,7 @@ export class TextProjectsService {
         title: "Join Django",
         about : "Task management web app um Todos besser verwalten zu können.",
         process : "Umsetzung von Join Vanilla mit Angular und Django.",
-        gitLink : "https://github.com/paul-ivan/join-django", 
+        gitLink : "https://github.com/NaviPlau/JoinBackend", 
         liveLink : "https://join-django.web.app/",
         image : "img/join.png",
         tech : {
@@ -90,7 +90,7 @@ export class TextProjectsService {
         title: "Coderr",
         about : "Hier kann man Dienstleistungen in Bereich IT kaufne und everkaufen",
         process : "Erstellung von Backend mit Django uns Sqlite. Frontend wurde von Developer Akademie zu verfügung gestellt",
-        gitLink : "https://github.com/paul-ivan/coderr", 
+        gitLink : "https://github.com/NaviPlau/Coderr-Backend", 
         liveLink : "https://coderr.web.app/",
         image :   "img/coderr.png",
         tech : {
@@ -108,8 +108,8 @@ export class TextProjectsService {
         title: "Videoflix",
         about : "Eine videoplatform angelehnt and Netflix. Implementierung voon Authentification and videouploads.",
         process : "Using django with postgresql, redis and celery to guarantee a smooth user experience.",
-        gitLink : "https://github.com/paul-ivan/videoflix", 
-        liveLink : "https://videoflix.web.app/",
+        gitLink : "https://github.com/NaviPlau/VideoflixBackend", 
+        liveLink : "https://videoflix.paul-ivan.com/",
         image : "img/videoflix.png",
         tech : {
           title : "Technologien",
@@ -182,7 +182,7 @@ export class TextProjectsService {
           title: "Join Django",
           about : "Task management web app to manage Todos better.",
           process : "Umsetzung von Join Vanilla mit Angular und Django.",
-          gitLink : "https://github.com/paul-ivan/join-django", 
+          gitLink : "https://github.com/NaviPlau/JoinBackend", 
           liveLink : "https://join-django.web.app/",
           image : "img/join.png",
           tech : {
@@ -201,7 +201,7 @@ export class TextProjectsService {
         title: "Coderr",
         about : "Here you can buy and sell IT services",
         process : "Creation of Backend with Django and Sqlite. Frontend was provided by Developer Akademie",
-        gitLink : "https://github.com/paul-ivan/coderr", 
+        gitLink : "https://github.com/NaviPlau/Coderr-Backend", 
         liveLink : "https://coderr.web.app/",
         image :   "img/coderr.png",
         tech : {
@@ -219,8 +219,8 @@ export class TextProjectsService {
         title : "Videoflix",
         about : "A video platform inspired by Netflix. Implementation of authentication and video uploads.",
         process : "Using django with postgresql, redis and celery to guarantee a smooth user experience.",
-        gitLink : "https://github.com/paul-ivan/videoflix", 
-        liveLink : "https://videoflix.web.app/",
+        gitLink : "https://github.com/NaviPlau/VideoflixBackend", 
+        liveLink : "https://videoflix.paul-ivan.com/",
         image : "img/videoflix.png",
         tech : {
           title : "Technologien",

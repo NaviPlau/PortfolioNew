@@ -1,18 +1,18 @@
 <div class="header">
   <div class="icons">
-    <a href="https://github.com/NaviPlau" target="_blank"> <app-hero-github class="svg" aria-label="Github"></app-hero-github></a>
-    <a href="mailto:info@paul-ivan.com"><app-hero-email class="svg" aria-label="Email"></app-hero-email></a>
-    <a href="https://www.linkedin.com/in/paul-ivan-a87585328/" target="_blank"><app-hero-linked class="svg" aria-label="Linkedin"></app-hero-linked></a>
+    <a href="https://github.com/NaviPlau" target="_blank" matTooltip="GitHub"> <app-hero-github class="svg" aria-label="Github"></app-hero-github></a>
+    <a href="mailto:info@paul-ivan.com" matTooltip="E-mail"><app-hero-email class="svg" aria-label="Email"></app-hero-email></a>
+    <a href="https://www.linkedin.com/in/paul-ivan-a87585328/" matTooltip="Linkedin" target="_blank"><app-hero-linked class="svg" aria-label="Linkedin"></app-hero-linked></a>
     @if(lightmodus.light()){
-      <mat-icon class="light icon" (click)="lightmodus.toggle()" aria-label="Switch to dark mode" >dark_mode</mat-icon>
+      <mat-icon class="light icon" matTooltip="Dark Mode" (click)="lightmodus.toggle()" aria-label="Switch to dark mode" >dark_mode</mat-icon>
     
       }@else {
-      <mat-icon class="dark icon" (click)="lightmodus.toggle()" aria-label="Switch to light mode">light_mode</mat-icon>
+      <mat-icon class="dark icon" matTooltip="Light Mode" (click)="lightmodus.toggle()" aria-label="Switch to light mode">light_mode</mat-icon>
       }
   </div>
 
   
-  <app-lg-button ></app-lg-button>
+  <app-lg-button [matTooltip]="lang.language() === 'de' ? 'Switch to English' : ' Zur Deutschen Sprache'" ></app-lg-button>
 
   
 

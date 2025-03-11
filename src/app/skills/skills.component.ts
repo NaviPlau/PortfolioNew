@@ -6,11 +6,12 @@ import { ClickOutsideDirective } from '../shared/directives/click-outside.direct
 import { AriaConverterDirective } from '../shared/directives/aria-label-converter/aria-converter.directive';
 import { ScrollIntoService } from '../shared/services/scroll-view/scroll-into.service';
 import { TextSkillsService } from '../shared/services/text-data/text-skills.service';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CubeComponent, CommonModule, ClickOutsideDirective, AriaConverterDirective],
+  imports: [CubeComponent, CommonModule, ClickOutsideDirective, AriaConverterDirective, MatIcon],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })

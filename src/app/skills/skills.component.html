@@ -17,14 +17,15 @@
     <div class="button-wrapper" #buttonWrap [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'">
       <h1 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.skillsText().title}} </h1>
       @if(shownText()){
-        <div appAriaConverter class="text" [appClickOutside]="hideText">
-          {{shownText()}}
+        <div  class="text" [appClickOutside]="hideText">
+          <span class="text-wrapper " appAriaConverter [ngClass]="lightmodus.light() ? 'light-icon' : 'dark-icon'"><span><mat-icon class="icon nowrap">fiber_manual_record</mat-icon></span>
+          {{shownText()}} </span>
 
         </div>
       }@else {
         <div class="text" [appClickOutside]="hideText">
-          TODO: write text and check aria
-          <span appAriaConverter>{{text.skillsText().clickText}}</span>
+          <span class="text-wrapper" appAriaConverter [ngClass]="lightmodus.light() ? 'light-icon' : 'dark-icon'"><mat-icon class="icon">fiber_manual_record</mat-icon>
+           {{text.skillsText().clickText}}</span>
         </div>
       }
       <button appAriaConverter [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'" class="fs-18" (click)="toggleSkills()">{{text.skillsText().buttonText()}}</button>

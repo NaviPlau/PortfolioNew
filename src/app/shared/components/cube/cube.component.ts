@@ -89,4 +89,47 @@ export class CubeComponent implements OnInit {
     this.isHovered = false;
     this.ambientLight.intensity = 2;
   }
-}
+
+  ngOnDestroy(): void {
+    this.disposeCube();
+    this.disposeRenderer();
+    this.disposeScene();
+  }
+
+  disposeScene(){
+    this.scene.remove(this.ambientLight);
+    this.scene.clear();
+    const gl = this.renderer.getContext();
+    if (gl) {
+      gl.getExtension('WEBGL_lose_context')?.loseContext();
+    }
+  }
+
+  disposeRenderer(){
+    this.renderer.domElement.removeEventListener('mouseenter', this.onMouseEnter.bind(this));
+    this.renderer.domElement.removeEventListener('mouseleave', this.onMouseLeave.bind(this));
+    this.renderer.dispose();
+    if (this.renderer.domElement.parentNode) {
+      this.renderer.domElement.parentNode.removeChild(this.renderer.domElement);
+    }
+  }
+  
+  disposeCube(){
+    if (this.cube) {
+      this.scene.remove(this.cube);
+      this.cube.geometry.dispose();
+      if (Array.isArray(this.cube.material)) {
+        this.cube.material.forEach(material => {
+          const mat = material as THREE.MeshStandardMaterial;
+          if (mat.map) { mat.map.dispose() }
+          mat.dispose();
+        });
+      } else {
+        const mat = this.cube.material as THREE.MeshStandardMaterial;
+        if (mat.map) { mat.map.dispose(); }
+        mat.dispose();
+      }
+    }
+  }
+  
+}  

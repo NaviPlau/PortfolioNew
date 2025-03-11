@@ -14,6 +14,7 @@ export class TextContactService {
   subtitle = computed(() =>(this.lang.language() === 'de' ? "Lass uns heute starten" : "Let's get started today"))
   description = computed(() =>(this.lang.language() === 'de' ? "Kontaktieren Sie mich über dieses Formular, um meine Fähigkeiten in Ihre Projekte zu integrieren." : "Contact me using this form to integrate my skills into your projects."))
   buttonText = computed(() =>(this.lang.language() === 'de' ? "Senden" : "Send"))
+  arrowText = computed(() =>(this.lang.language() === 'de' ? "Zum Anfang" : "To Top"))
   formText = computed(() =>(this.lang.language() === 'de' ? {
     name: "Dein Name",
     email: "Dein E-Mail",

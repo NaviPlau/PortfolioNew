@@ -1,7 +1,7 @@
 <section [ngClass]="lightmodus.light() ? 'light-background border-footer-light' : 'dark-background border-footer-dark'" >
     <footer >
       <div class="info">
-        <a routerLink="/" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link"><span>{{ text.footerText().name }}</span></a>
+        <span (click)="navigator.navigateTo('' , 'about')" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link"> {{ text.footerText().name }}</span>
         <span>{{ text.footerText().job }}</span>
         <a href="{{ text.footerText().location.map}}" target="_blank" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link">{{ text.footerText().location.title}}</a>
       </div>

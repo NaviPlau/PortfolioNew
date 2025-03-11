@@ -16,7 +16,7 @@ export class TextFooterService {
       title: "Linz Österreich",
       map: "https://www.google.com/search?q=linz&oq=linz&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg8MgcIAhAuGIAEMg0IAxAuGMcBGNEDGIAEMgYIBBBFGDwyBggFEEUYQTIGCAYQRRg8MgYIBxBFGDzSAQc5NjlqMGo0qAIAsAIB&sourceid=chrome&ie=UTF-8"
     },
-    copyright : "© 2023 Paul Ivan",
+    copyright : "© 2025 Paul Ivan",
     links : {
       github : {
         title : "Github",
@@ -42,7 +42,7 @@ export class TextFooterService {
       title: "Linz Austria",
       map: "https://www.google.com/search?q=linz&oq=linz&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg8MgcIAhAuGIAEMg0IAxAuGMcBGNEDGIAEMgYIBBBFGDwyBggFEEUYQTIGCAYQRRg8MgYIBxBFGDzSAQc5NjlqMGo0qAIAsAIB&sourceid=chrome&ie=UTF-8"
     },
-    copyright : "© 2023 Paul Ivan",
+    copyright : "© 2025 Paul Ivan",
     links : {
       github : {
         title : "Github",

@@ -10,7 +10,6 @@ section {
   overflow: hidden;
 }
 
-
 .content {
   @include display(flex, row, space-between, center);
   position: relative;
@@ -25,8 +24,6 @@ section {
   }
 }
 
-
-
 .cubes-wrapper {
   @include display(flex, row, center, center);
   flex-wrap: wrap;
@@ -35,18 +32,14 @@ section {
   transform: translateY(-20%);
   max-width: 600px;
   width: 100%;
-
-
   &.animate-fade-in-staggered {
     opacity: 1;
     transform: translateY(0);
-
     .cube {
       opacity: 0;
       transform: translateY(-20%);
       animation: fadeInStaggered 0.6s ease-out forwards;
     }
-
     @for $i from 1 through 12 {
       .cube:nth-child(#{$i}) {
         animation-delay: #{$i * 0.15s}
@@ -65,13 +58,14 @@ section {
   cursor: pointer;
   width: 100px;
   @include display(flex, column, center, center);
-
 }
 
 .text{
   width: 90%;
   font-family: 'hero', serif;
   text-align: left;
+  @include display(flex, row, flex-start, flex-start);
+  gap: 10px
 }
 
 .button-wrapper{
@@ -83,9 +77,6 @@ section {
   border-radius: 30px;
   opacity: 0;
   transform: translateY(-20%);
-
-
-
 }
 
 .light-text{

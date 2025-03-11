@@ -6,11 +6,11 @@ import { MatIcon } from '@angular/material/icon';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ScrollIntoService } from '../shared/services/scroll-view/scroll-into.service';
 import { TextHeroService } from '../shared/services/text-data/text-hero.service';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule, MatIcon],
+  imports: [CommonModule, MatIcon, MatTooltipModule],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
   animations: [
@@ -32,7 +32,6 @@ import { TextHeroService } from '../shared/services/text-data/text-hero.service'
 })
 export class HeroComponent {
   lightmodus = inject(LightDarkService);
-  lang = inject(LangService);
   scrollService = inject(ScrollIntoService);
   text = inject(TextHeroService);
   hoveredButton = signal(false);
@@ -72,6 +71,7 @@ export class HeroComponent {
   }
 
   onButtonClick() {
+    this.scrollService.navigatorScroll('contact');
     if (this.isMobile()) {
       this.animationState.set('hover');
     }

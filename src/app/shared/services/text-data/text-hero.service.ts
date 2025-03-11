@@ -17,4 +17,5 @@ export class TextHeroService {
   subtitle = computed(() =>(this.lang.language() === 'de' ? "Fullstack Entwickler" : "Fullstack Developer"));
   titleChars = computed(() => [...this.title()]);
   subtitleChars = computed(() => [...this.subtitle()]);
+  arrowText = computed(() =>(this.lang.language() === 'de' ? "Runterscrollen" : "Scroll down"));
 }

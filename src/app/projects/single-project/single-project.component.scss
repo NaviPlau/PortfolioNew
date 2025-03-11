@@ -23,35 +23,7 @@
 }
 
 
-.text-wrapper {
-  width: 100%;
-  @include display(flex, row, flex-start, center);
-  gap: 10px;
 
-  &.light-icon {
-    .icon {
-      color: $light-normal;
-    }
-  }
-  &.dark-icon {
-    .icon {
-      color: $dark-hover;
-    }
-  }
-
-  &:hover {
-    &.light-icon {
-      .icon {
-        color: $light-hover;
-      }
-    }
-    &.dark-icon {
-      .icon {
-        color: $dark-normal;
-      }
-    }
-  }
-}
 
 
 .img-area {

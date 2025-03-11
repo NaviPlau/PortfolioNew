@@ -110,8 +110,8 @@
         {{text.buttonText()}}
       </button>
     </form>
-    <div class="arrow-wrapper">
-        <mat-icon class="arrow" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" (click)="scrollService.mainScrollTop()">arrow_upward</mat-icon>
+    <div class="arrow-wrapper" >
+        <mat-icon [matTooltip]="text.arrowText()" class="arrow" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" (click)="scrollService.mainScrollTop()">arrow_upward</mat-icon>
     </div>
   </div>
 </section>

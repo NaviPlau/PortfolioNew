@@ -1,7 +1,7 @@
 <div class="header-wrapper">
   <header>
 
-    <mat-icon [attr.aria-label]="lang.language() === 'de' ? 'Menü' : 'Menu'" class="menu-icon" [ngClass]="lightmodus.light() ? 'light' : 'dark'" (click)="menuHidden = !menuHidden">menu</mat-icon>
+    <mat-icon [matTooltip]="lang.language() === 'de' ? 'Menü' : 'Menu'" [attr.aria-label]="lang.language() === 'de' ? 'Menü' : 'Menu'" class="menu-icon" [ngClass]="lightmodus.light() ? 'light' : 'dark'" (click)="menuHidden = !menuHidden">menu</mat-icon>
 
     @if(!menuHidden){
     <nav [appClickOutside]="closeMenu" [@fadeAnimation] >
@@ -10,12 +10,12 @@
         <mat-icon [attr.aria-label]="lang.language() === 'de' ? 'Schließen' : 'Close'" (click)="menuHidden = !menuHidden">close</mat-icon>
       </div>
       @for (link of links(); track $index) {
-      <div (mouseenter)="hoveredIndex = $index" (mouseleave)="hoveredIndex = -1" class="link-wrapper">
+      <div (mouseenter)="hoveredIndex = $index" (mouseleave)="hoveredIndex = -1" class="link-wrapper" (click)="navigator.navigateTo('', navigationLinks[links().indexOf(link)])">
         <mat-icon *ngIf="hoveredIndex === $index" [@swipeAnimation] [ngStyle]="{ color: getSwipeColor()}"
           class="swipe-icon">
           {{ getSwipeIcon() }}
         </mat-icon>
-        <span (click)="navigator.navigateTo('', navigationLinks[links().indexOf(link)])"  [ngStyle]="{ color: hoveredIndex === $index ? '#89BCD9' : 'inherit', 'font-weight': hoveredIndex === $index ? '600' : 'inherit' }">
+        <span   [ngStyle]="{ color: hoveredIndex === $index ? '#89BCD9' : 'inherit', 'font-weight': hoveredIndex === $index ? '600' : 'inherit' }">
           {{ link }}
         </span>
       </div>

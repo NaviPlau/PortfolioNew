@@ -21,11 +21,11 @@
         waving_hand
       </mat-icon>
 
-      <button [attr.aria-label]="lang.language() === 'de' ? 'Kontaktieren Sie mich' : 'Contact Me'" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="onButtonClick()"
+      <button [attr.aria-label]="text.buttonText()" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="onButtonClick()"
         [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'">
         {{text.buttonText()}}
       </button>
     </div>
-      <mat-icon class="arrow" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" (click)="scrollService.navigatorScroll('about')">arrow_downward</mat-icon>
+      <mat-icon [matTooltip]="text.arrowText()" class="arrow" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" (click)="scrollService.navigatorScroll('about')">arrow_downward</mat-icon>
   </div>
 </section>

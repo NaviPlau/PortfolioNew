@@ -5,14 +5,14 @@ import { TextContactService } from '../shared/services/text-data/text-contact.se
 import { ScrollIntoService } from '../shared/services/scroll-view/scroll-into.service';
 import { FormBuilder,FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
-import { RouterLink } from '@angular/router';
 import { NavigatorService } from '../shared/services/navigation/navigator.service';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatIcon],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatIcon, MatTooltipModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

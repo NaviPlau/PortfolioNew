@@ -6,10 +6,11 @@ import { CommonModule } from '@angular/common';
 import { LightDarkService } from '../../services/lightmodus/light-dark.service';
 import { LangService } from '../../services/language/lang.service';
 import { NavigatorService } from '../../services/navigation/navigator.service';
+import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-burger-menu',
   standalone: true,
-  imports: [MatIconModule, CommonModule, ClickOutsideDirective],
+  imports: [MatIconModule, CommonModule, ClickOutsideDirective, MatTooltipModule],
   templateUrl: './burger-menu.component.html',
   styleUrl: './burger-menu.component.scss',
   animations: [

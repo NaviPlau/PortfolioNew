@@ -14,9 +14,12 @@ export class NavigatorService {
   navigateTo(route: string, elementId: string | null) {
     if (this.router.url !== route) {
       this.router.navigate([route]).then(() => {
-        if (elementId) {
+        setTimeout(() => {
+          if (elementId) {
             this.scrollService.navigatorScroll(elementId);
         }
+        }, 20);
+        
       });
     }
   }
