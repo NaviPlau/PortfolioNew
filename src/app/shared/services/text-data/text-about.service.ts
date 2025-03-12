@@ -15,7 +15,7 @@ export class TextAboutService {
     paragraphs: {
       about: "Hallo, ich bin Paul Ivan. Ich bin ein Fullstack Entwickler mit Sitz in Langenstein, Osterreich.",
       location: "Ich stehe ausschließlich für Remote-Arbeitsmöglichkeiten zur Verfügung. Derzeit befinde ich mich in Österreich und werde meine Remote-Tätigkeit in naher Zukunft von Ungarn aus fortsetzen.Mein Standortwechsel beeinflusst weder meine Verfügbarkeit noch meine Produktivität oder die Zusammenarbeit mit dem Team.",
-      challenge: "Ich betrachte jede Herausforderung als eine Chance zu lernen und arbeite gewissenhaft daran, mein technisches Wissen und meine Flexibilität in der IT-Umgebung zu verbessern.",
+      challenge: "Meine schnelle Auffassungsgabe und gute Merkfähigkeit helfen mir, neue Inhalte extrem schnell zu erfassen und gezielt in meine Projekte einzubringen.",
       checkmark: "Ich genieße es, komplexe Herausforderungen in einfache, benutzerfreundliche Lösungen zu verwandeln, um Ihnen zu helfen, Ihre Ziele zu erreichen."
     }
   } : {
@@ -23,7 +23,7 @@ export class TextAboutService {
     paragraphs: {
       about: "Hi, I'm Paul Ivan. I'm a Fullstack Developer based in Langenstein, upper Austria. ",
       location: "I am available exclusively for remote employment opportunities. Currently based in Austria, I will be continuing my remote work from Hungary in the near future. My location shift will not affect my availability, productivity, or collaboration with teams.",
-      challenge: "I view each challenge as an opportunity to learn and work diligently to improve my technical knowledge and flexibility in the IT environment.",
+      challenge: "My quick comprehension and strong memory help me grasp new concepts very swiftly and apply them effectively in my projects.",
       checkmark: "I enjoy turning complex challenges into easy, user-friendly solutions to help you achieve your goals."
     }
   }))
