@@ -71,45 +71,6 @@ export class TextProjectsService {
       },
       {
         id : 4,
-        title: "Join Django",
-        about : "Join ist eine Task-Management-Web-App, die ich mit Angular und Django umgesetzt habe. Im Gegensatz zur vorherigen Version basiert dieses Projekt auf meinem eigenen Backend anstelle von Firebase.",
-        process : "Ich habe das gesamte Projekt alleine entwickelt, einschließlich Frontend mit Angular (unter Nutzung von Signals) und Backend mit Django, basierend auf dem Django REST Framework.",
-        challenge : "Die größte Herausforderung war die Entwicklung meines ersten eigenen Backends und die nahtlose Verbindung mit dem Frontend.",
-        gitLink : "https://github.com/NaviPlau/JoinBackend", 
-        liveLink : "https://angular-join.paul-ivan.com/",
-        image : "img/join.png",
-        tech : {
-          title : "Technologien",
-          techs : [
-            "Angular",
-            "Django",
-            "SQLite",
-            "Linux",
-            "Cloud"
-          ]
-        }
-      },
-      {
-        id : 5,
-        title: "Coderr",
-        about : "Diese Web-App ist an Fiverr angelehnt und bietet eine Plattform für den Kauf, Verkauf und die Verwaltung von IT-Dienstleistungen. Nutzer können individuelle Services anbieten, Aufträge erstellen und verwalten.",
-        process : "Mein Hauptfokus lag auf der Entwicklung des vollständigen Backends mit dem Django Rest Framework (DRF). Das Frontend wurde von der Developer Akademie zu verfügung gestellt",
-        challenge : "Die größte Herausforderung bestand darin, die gesamte Umsetzung strikt nach der vorgegebenen Dokumentation durchzuführen. Dies erforderte eine exakte Planung, eine präzise API-Entwicklung und eine konsequente Einhaltung der definierten Anforderungen.", 
-        gitLink : "https://github.com/NaviPlau/Coderr-Backend", 
-        liveLink : "https://coderr.paul-ivan.com/",
-        image :   "img/coderr.png",
-        tech : {
-          title : "Technologien",
-          techs : [
-            "Django",
-            "SQLite",
-            "Linux",
-            "Cloud"
-          ]
-        }
-      },
-      {
-        id : 6,
         title: "Videoflix",
         about : "Videoflix ist eine Video-Plattform, auf der sich Nutzer registrieren, einloggen und kurze Videos ansehen können. Die Plattform bietet ein nahtloses Streaming-Erlebnis und passt die Videoqualität dynamisch an die Netzwerkgeschwindigkeit an.",
         process : "Mein Hauptfokus lag auf der Entwicklung sowohl des Backends als auch des Frontends. Das Backend wurde mit Django Rest Framework entwickelt und kümmert sich um Benutzer-Authentifizierung, Video-Uploads und HLS-Streaming. Das Frontend, erstellt mit Angular, sorgt für eine intuitive Benutzeroberfläche und eine reibungslose Wiedergabe.",
@@ -129,7 +90,47 @@ export class TextProjectsService {
             "Celery"
           ]
         }
-      }
+      },
+      {
+        id : 5,
+        title: "Join Django",
+        about : "Join ist eine Task-Management-Web-App, die ich mit Angular und Django umgesetzt habe. Im Gegensatz zur vorherigen Version basiert dieses Projekt auf meinem eigenen Backend anstelle von Firebase.",
+        process : "Ich habe das gesamte Projekt alleine entwickelt, einschließlich Frontend mit Angular (unter Nutzung von Signals) und Backend mit Django, basierend auf dem Django REST Framework.",
+        challenge : "Die größte Herausforderung war die Entwicklung meines ersten eigenen Backends und die nahtlose Verbindung mit dem Frontend.",
+        gitLink : "https://github.com/NaviPlau/JoinBackend", 
+        liveLink : "https://angular-join.paul-ivan.com/",
+        image : "img/join.png",
+        tech : {
+          title : "Technologien",
+          techs : [
+            "Angular",
+            "Django",
+            "SQLite",
+            "Linux",
+            "Cloud"
+          ]
+        }
+      },
+      {
+        id : 6,
+        title: "Coderr",
+        about : "Diese Web-App ist an Fiverr angelehnt und bietet eine Plattform für den Kauf, Verkauf und die Verwaltung von IT-Dienstleistungen. Nutzer können individuelle Services anbieten, Aufträge erstellen und verwalten.",
+        process : "Mein Hauptfokus lag auf der Entwicklung des vollständigen Backends mit dem Django Rest Framework (DRF). Das Frontend wurde von der Developer Akademie zu verfügung gestellt",
+        challenge : "Die größte Herausforderung bestand darin, die gesamte Umsetzung strikt nach der vorgegebenen Dokumentation durchzuführen. Dies erforderte eine exakte Planung, eine präzise API-Entwicklung und eine konsequente Einhaltung der definierten Anforderungen.", 
+        gitLink : "https://github.com/NaviPlau/Coderr-Backend", 
+        liveLink : "https://coderr.paul-ivan.com/",
+        image :   "img/coderr.png",
+        tech : {
+          title : "Technologien",
+          techs : [
+            "Django",
+            "SQLite",
+            "Linux",
+            "Cloud"
+          ]
+        }
+      },
+      
       ] } : {
         title : "My Projects",
         projects :[
@@ -188,6 +189,28 @@ export class TextProjectsService {
         },
         {
           id : 4,
+          title : "Videoflix",
+          about : "Videoflix is a video platform where users can register, log in, and watch short videos. The platform is designed to provide a seamless streaming experience while dynamically adjusting video quality based on network speed.",
+          process : "My primary focus was on developing both the backend and frontend. The backend was built using Django Rest Framework, handling user authentication, video uploads, and HLS streaming. The frontend, developed with Angular, ensures smooth playback and an intuitive user experience.",
+          challenge : "The biggest challenge was implementing HLS streaming for adaptive video playback. This required integrating FFmpeg for video conversion, Redis & Celery for background processing, and optimizing database queries to ensure efficient video delivery.",
+          gitLink : "https://github.com/NaviPlau/VideoflixBackend", 
+          liveLink : "https://videoflix.paul-ivan.com/",
+          image : "img/videoflix.png",
+          tech : {
+            title : "Technologien",
+            techs : [
+              "Angular",
+              "Django",
+              "PostgreSQL",
+              "Linux",
+              "Cloud",
+              "Redis",
+              "Celery"
+            ]
+          }
+        },
+        {
+          id : 5,
           title: "Join Django",
           about : "Join is a task management web app that I built using Angular and Django. Unlike the previous version, this project uses my own backend instead of Firebase.",
           process : "I developed the entire project on my own, including the frontend utilizing Angular signals, and the backend powered by the Django REST Framework.",
@@ -207,7 +230,7 @@ export class TextProjectsService {
           }
       },
       {
-        id : 5,
+        id : 6,
         title: "Coderr",
         about : "This web app is inspired by Fiverr and provides a platform for buying, selling, and managing IT services. Users can offer individual services, create and manage orders.",
         process : "My main focus was on developing the complete backend using the Django Rest Framework (DRF). The frontend was provided by Developer Akademie.",
@@ -225,28 +248,6 @@ export class TextProjectsService {
           ]
         }
       },
-      {
-        id : 6,
-        title : "Videoflix",
-        about : "Videoflix is a video platform where users can register, log in, and watch short videos. The platform is designed to provide a seamless streaming experience while dynamically adjusting video quality based on network speed.",
-        process : "My primary focus was on developing both the backend and frontend. The backend was built using Django Rest Framework, handling user authentication, video uploads, and HLS streaming. The frontend, developed with Angular, ensures smooth playback and an intuitive user experience.",
-        challenge : "The biggest challenge was implementing HLS streaming for adaptive video playback. This required integrating FFmpeg for video conversion, Redis & Celery for background processing, and optimizing database queries to ensure efficient video delivery.",
-        gitLink : "https://github.com/NaviPlau/VideoflixBackend", 
-        liveLink : "https://videoflix.paul-ivan.com/",
-        image : "img/videoflix.png",
-        tech : {
-          title : "Technologien",
-          techs : [
-            "Angular",
-            "Django",
-            "PostgreSQL",
-            "Linux",
-            "Cloud",
-            "Redis",
-            "Celery"
-          ]
-        }
-      }
       ]
     })
   })

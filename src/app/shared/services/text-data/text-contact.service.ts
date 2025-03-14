@@ -16,9 +16,9 @@ export class TextContactService {
   buttonText = computed(() =>(this.lang.language() === 'de' ? "Senden" : "Send"))
   arrowText = computed(() =>(this.lang.language() === 'de' ? "Zum Anfang" : "To Top"))
   formText = computed(() =>(this.lang.language() === 'de' ? {
-    name: "Dein Name",
-    email: "Dein E-Mail",
-    message : "Dein nachricht",
+    name: "Ihr Name",
+    email: "Ihre E-Mail",
+    message: "Ihre Nachricht",
     checkbox: "Ich akzeptiere die ",
     success: {title: "Erfolgreich gesendet", message: "Dein Nachricht wurde erfolgreich gesendet."},
     errors : {
