@@ -7,6 +7,7 @@ import { FormBuilder,FormsModule, ReactiveFormsModule, Validators } from '@angul
 import { MatIcon } from '@angular/material/icon';
 import { NavigatorService } from '../shared/services/navigation/navigator.service';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -25,9 +26,22 @@ export class ContactComponent {
   @ViewChild('contactTitle', { static: true }) contactTitle!: ElementRef
   @ViewChild('contactFormElement', { static: true }) contactFormElement!: ElementRef
   sent = signal(false);
+  mailTest: boolean = false;
+  http = inject(HttpClient);
 
   contactForm!: any;
   fb = inject(FormBuilder);
+
+  post = {
+    endPoint: 'https://second-portfolio.paul-ivan.com/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'application/json',
+        responseType: 'text',
+      },
+    },
+  };
   
 
   constructor() { 
@@ -53,17 +67,29 @@ export class ContactComponent {
   }
 
   submit(){
-    console.log('submit');
-    
     if (this.contactForm.valid) {
-      console.log(this.contactForm.value);
-      this.sent.set(true);
-      setTimeout(() => {
-        this.sent.set(false);
-        this.contactForm.reset();
-      }, 3000);
+      this.sendEmail()
+      this.resetForm();
     }
   }
 
+  sendEmail() {
+    this.http.post(this.post.endPoint, this.getRequestBody(), this.post.options)
+      .subscribe({
+        next: () => this.sent.set(true)
+      });
+  }
+
+  resetForm() {
+    setTimeout(() => {
+      this.sent.set(false);
+      this.contactForm.reset();
+    }, 3000);
+  }
+ 
+
+  getRequestBody(): string {
+    return this.post.body(this.contactForm.value);
+  }
 
 }
