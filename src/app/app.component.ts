@@ -1,15 +1,10 @@
-import { Component, inject, signal } from '@angular/core';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./shared/components/header/header.component";
 import { BurgerMenuComponent } from "./shared/components/burger-menu/burger-menu.component";
-import { HeroComponent } from "./hero/hero.component";
-import { AboutComponent } from "./about/about.component";
-import { SkillsComponent } from "./skills/skills.component";
-import { ProjectsComponent } from "./projects/projects.component";
-import { ReferencesComponent } from "./references/references.component";
-import { ContactComponent } from "./contact/contact.component";
+import { Platform } from '@angular/cdk/platform';
 import { FooterComponent } from "./shared/components/footer/footer.component";
-import { LegalNoticeComponent } from "./legal-notice/legal-notice.component";
+
 
 @Component({
   selector: 'app-root',
@@ -20,4 +15,14 @@ import { LegalNoticeComponent } from "./legal-notice/legal-notice.component";
 })
 export class AppComponent  {
   title = 'portfolio';
+  isMobile: boolean;
+
+  constructor(private platform: Platform) {
+    this.isMobile = this.platform.ANDROID || this.platform.IOS;
+    if (this.isMobile) {
+      document.documentElement.classList.add('disable-tooltips');
+    }
+
+    
+  }
 }

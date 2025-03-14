@@ -27,6 +27,7 @@ export class LangService {
     this.language.set(this.language() === 'en' ? 'de' : 'en');
     localStorage.setItem('lang', this.language());
     this.redirectLocalizedRoute();
+    document.documentElement.lang = this.language();
   }
 
   redirectLocalizedRoute() {

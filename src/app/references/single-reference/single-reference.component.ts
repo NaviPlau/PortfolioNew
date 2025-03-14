@@ -1,6 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { LightDarkService } from '../../shared/services/lightmodus/light-dark.service';
 import { CommonModule } from '@angular/common';
+import { TextReferencesService } from '../../shared/services/text-data/text-references.service';
 
 @Component({
   selector: 'app-single-reference',
@@ -12,4 +13,5 @@ import { CommonModule } from '@angular/common';
 export class SingleReferenceComponent {
   @Input () reference: any
   lightmodus = inject(LightDarkService)
+  text = inject(TextReferencesService)
 }

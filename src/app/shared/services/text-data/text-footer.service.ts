@@ -14,7 +14,7 @@ export class TextFooterService {
     job : "Fullstack Entwickler",
     location : {
       title: "Langenstein Österreich",
-      map: "https://g.co/kgs/3xQqbVg"
+      map: "https://g.co/kgs/zsK34fT"
     },
     copyright : "© 2025 Paul Ivan",
     links : {
@@ -40,7 +40,7 @@ export class TextFooterService {
     job : "Fullstack Developer",
     location : {
       title: "Langenstein Austria",
-      map: "https://g.co/kgs/3xQqbVg"
+      map: "https://g.co/kgs/zsK34fT"
     },
     copyright : "© 2025 Paul Ivan",
     links : {

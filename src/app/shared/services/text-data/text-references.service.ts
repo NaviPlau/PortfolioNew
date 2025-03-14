@@ -9,6 +9,7 @@ export class TextReferencesService {
   constructor() { }
 
   title = computed(() => this.lang.language() === 'de' ? "Referenzen" : "References")
+  project = computed(() => this.lang.language() === 'de' ? "Projekt" : "Project")
 
   references = computed(() => this.lang.language() === 'de' ? [
     {

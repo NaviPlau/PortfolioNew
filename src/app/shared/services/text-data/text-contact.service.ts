@@ -7,7 +7,7 @@ import { LangService } from '../language/lang.service';
 export class TextContactService {
   lang = inject(LangService)
   constructor() { }
-  policy = computed(() =>(this.lang.language() === 'de' ? "Datenschutzerklaerung! " : "Privacy Policy!"));
+  policy = computed(() =>(this.lang.language() === 'de' ? "Datenschutzerklärung! " : "Privacy Policy!"));
   policyRoute = computed(() =>(this.lang.language() === 'de' ? "datenschutz" : "privacy-policy"));
   textLength = computed(() =>(this.lang.language() === 'de' ? "Zeichen übrig" : "Characters left"));
   title = computed(() =>(this.lang.language() === 'de' ? "Kontakt" : "Contact"))
