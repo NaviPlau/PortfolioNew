@@ -18,7 +18,7 @@ export class LazyloadDirective {
           this.observer.disconnect();
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.001 });
 
     this.observer.observe(this.el.nativeElement);
   }

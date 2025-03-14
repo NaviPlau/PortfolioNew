@@ -56,7 +56,7 @@ section {
 
 .cube{
   cursor: pointer;
-  width: 100px;
+  width: 90px;
   @include display(flex, column, center, center);
 }
 

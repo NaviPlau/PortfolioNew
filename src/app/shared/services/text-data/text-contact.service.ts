@@ -11,8 +11,8 @@ export class TextContactService {
   policyRoute = computed(() =>(this.lang.language() === 'de' ? "datenschutz" : "privacy-policy"));
   textLength = computed(() =>(this.lang.language() === 'de' ? "Zeichen übrig" : "Characters left"));
   title = computed(() =>(this.lang.language() === 'de' ? "Kontakt" : "Contact"))
-  subtitle = computed(() =>(this.lang.language() === 'de' ? "Lass uns heute starten" : "Let's get started today"))
-  description = computed(() =>(this.lang.language() === 'de' ? "Kontaktieren Sie mich über dieses Formular, um meine Fähigkeiten in Ihre Projekte zu integrieren." : "Contact me using this form to integrate my skills into your projects."))
+  subtitle = computed(() =>(this.lang.language() === 'de' ? "Lass uns jeztz durchstarten" : "Let's get started now"))
+  description = computed(() =>(this.lang.language() === 'de' ? "Benutzen Sie dieses Formular und nehmen Sie Kontakt mit mir auf. Wir werden meine Fertigkeiten in Ihre Projekte und Ihren Team einbauen." : "Use this form and get in touch with me. We will add my skills to your projects and your team."))
   buttonText = computed(() =>(this.lang.language() === 'de' ? "Senden" : "Send"))
   arrowText = computed(() =>(this.lang.language() === 'de' ? "Zum Anfang" : "To Top"))
   formText = computed(() =>(this.lang.language() === 'de' ? {

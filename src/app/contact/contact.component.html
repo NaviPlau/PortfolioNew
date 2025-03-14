@@ -1,10 +1,13 @@
 <section [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
   <div class="content" id="contact">
-    <h1 #contactTitle [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.title()}}</h1>
-    <div>
-      <span>{{text.subtitle()}}</span>
-      <p>{{text.description()}}</p>
+    <div #contactTitle [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'" class="title-wrapper">
+      <h1 >{{text.title()}}</h1>
+      <div class="subtitle">
+        <span>{{text.subtitle()}}</span>
+        <p class="subtitle2">{{text.description()}}</p>
+      </div>
     </div>
+
     <form #contactFormElement (ngSubmit)="submit()" [formGroup]="contactForm">
       <div class="contact-field">
         <div class="form-field">
@@ -30,7 +33,8 @@
           }
         </div>
         <div class="form-field">
-          <label for="email" [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.formText().email}}</label>
+          <label for="email"
+            [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.formText().email}}</label>
           <div class="input-field" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'">
             <input [ngClass]="lightmodus.light() ? 'input-light' : 'input-dark'" formControlName="email" type="email"
               id="email" name="email" [placeholder]="text.formText().email">
@@ -53,65 +57,74 @@
 
       </div>
       @if(sent()) {
-        <div class="form-field"> 
-          <label for="success" [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.formText().success.title}}</label>
-          <div class="input-field" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'">
-            <textarea name="sucess" type="sucess" [ngClass]="lightmodus.light() ? 'input-light' : 'input-dark'" readonly [value]="text.formText().success.message"></textarea>
-          </div>
+      <div class="form-field">
+        <label for="success"
+          [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.formText().success.title}}</label>
+        <div class="input-field" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'">
+          <textarea name="sucess" type="sucess" [ngClass]="lightmodus.light() ? 'input-light' : 'input-dark'" readonly
+            [value]="text.formText().success.message"></textarea>
         </div>
+      </div>
       }
       @if(!sent()) {
-        <div class="form-field">
-          <label for="message" [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.formText().message}}</label>
-          <div class="input-field" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'">
-            <textarea maxlength="1000" [ngClass]="lightmodus.light() ? 'input-light' : 'input-dark'"
-              formControlName="message" id="message" name="message" [placeholder]="text.formText().message"></textarea>
-              @if (message.value) {
-                <span class="textarea-length">
-                  {{ 1000 - message.value.length }} {{ text.textLength() }}
-                </span>
-              }
-          </div>
-          @if (message.touched && (message.errors?.required || message.errors?.minlength)) {
-          <span class="error">
-            @if (message.errors?.minlength) {
-            <span>
-              {{ text.formText().errors.message.minlength }}
-            </span>
-            }
-            @if (message.errors?.required) {
-            <span>
-              {{ text.formText().errors.message.required }}
-            </span>
-            }
+      <div class="form-field">
+        <label for="message"
+          [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.formText().message}}</label>
+        <div class="input-field" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'">
+          <textarea maxlength="1000" [ngClass]="lightmodus.light() ? 'input-light' : 'input-dark'"
+            formControlName="message" id="message" name="message" [placeholder]="text.formText().message"></textarea>
+          @if (message.value) {
+          <span class="textarea-length">
+            {{ 1000 - message.value.length }} {{ text.textLength() }}
           </span>
           }
         </div>
+        @if (message.touched && (message.errors?.required || message.errors?.minlength)) {
+        <span class="error">
+          @if (message.errors?.minlength) {
+          <span>
+            {{ text.formText().errors.message.minlength }}
+          </span>
+          }
+          @if (message.errors?.required) {
+          <span>
+            {{ text.formText().errors.message.required }}
+          </span>
+          }
+        </span>
+        }
+      </div>
       }
-      
-      
+
+
       <div class="form-field">
         <input type="checkbox" formControlName="privacyPolicy" id="privacyPolicy" class="custom-checkbox">
         <label for="privacyPolicy" class="custom-checkbox-label">
           <span class="custom-checkbox-box" [ngClass]="lightmodus.light() ? 'checkbox-light' : 'checkbox-dark'"></span>
-          <span class="label-text">{{ text.formText().checkbox }} <span (click)="navigator.navigateTo(text.policyRoute(), null)" [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link" href=""> {{ text.policy() }} </span></span>
+          <span class="label-text">{{ text.formText().checkbox }} <span
+              (click)="navigator.navigateTo(text.policyRoute(), null)"
+              [ngClass]="lightmodus.light() ? 'link-light' : 'link-dark'" class="link" href=""> {{ text.policy() }}
+            </span></span>
         </label>
-        
+
         @if (privacyPolicy.touched && privacyPolicy.errors?.required) {
-          <span class="error">
-            {{ text.formText().errors.checkbox.required }}
-          </span>
+        <span class="error">
+          {{ text.formText().errors.checkbox.required }}
+        </span>
         }
       </div>
-      
-      
 
-      <button  type="submit" [ngStyle]="" [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'" [disabled]="contactForm.invalid">
+
+
+      <button type="submit" [ngStyle]="" [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'"
+        [disabled]="contactForm.invalid">
         {{text.buttonText()}}
       </button>
     </form>
-    <div class="arrow-wrapper" >
-        <mat-icon [matTooltip]="text.arrowText()" class="arrow" [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'" (click)="scrollService.mainScrollTop()">arrow_upward</mat-icon>
+    <div class="arrow-wrapper">
+      <mat-icon [matTooltip]="text.arrowText()" class="arrow"
+        [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'"
+        (click)="scrollService.mainScrollTop()">arrow_upward</mat-icon>
     </div>
   </div>
 </section>

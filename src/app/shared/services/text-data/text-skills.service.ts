@@ -25,7 +25,7 @@ export class TextSkillsService {
           "Ich arbeite mit JavaScript und entwickle dynamische und responsive Webanwendungen. Mein Code ist strukturiert, wartbar und ermöglicht reibungslose Nutzerinteraktionen.",
           "Ich gestalte Webanwendungen mit CSS und SCSS. Ich entwerfe intuitive Layouts, verwende Variablen effizient und sorge für einheitliche visuelle Erlebnisse.",
           "Ich arbeite mit TypeScript, um robuste und skalierbare Webanwendungen zu entwickeln. Ich verwende klare Typdefinitionen, finde Fehler frühzeitig und gestalte den Entwicklungsprozess dadurch reibungsloser und sicherer. Mein Code ist dadurch einfacher wartbar, übersichtlich und qualitativ hochwertiger.",
-          "I build modern web apps using Angular Material Design. I create clean layouts with structured components, ensure responsive design, and provide smooth user experiences. My interfaces are intuitive, consistent, and aligned with Material Design principles.."
+          "Ich baue moderne Web Apps mit Angular Material Design wenn es möglich und sinnvoll ist."
         ] : [
           "Ich entwickle aktiv Anwendungen mit Python. Mein Code ist klar, übersichtlich und wartungsfreundlich gestaltet.",
           "Ich entwickle APIs mit Django und Django REST Framework. Meine APIs sind übersichtlich strukturiert, wartungsfreundlich und einfach mit Frontends integrierbar.",
@@ -51,7 +51,7 @@ export class TextSkillsService {
           "I work with JavaScript to create dynamic and responsive web apps. My code is structured, maintainable, and supports smooth user interactions.",
           "Ich gestalte Webanwendungen mit CSS und SCSS. Ich entwerfe intuitive Layouts, verwende Variablen effizient und sorge für einheitliche visuelle Erlebnisse.",
           "I regularly work with TypeScript to build stable and scalable web applications. I define precise types and interfaces, ensuring code is robust and understandable. Using TypeScript helps me catch errors early, simplifies debugging, and makes the development process smoother and safer.", 
-          "Material Design helped me create clean and accessible UI components easily."
+          "I build modern web apps using Angular Material Design when needed."
         ] : [
           "I actively develop applications using Python. My code is clear, structured, and easy to maintain.",
           "I develop APIs using Django and Django REST Framework. My APIs are clearly structured, maintainable, and easy to integrate with frontend applications.",

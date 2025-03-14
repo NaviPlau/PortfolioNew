@@ -19,6 +19,7 @@ export class CubeComponent implements OnInit {
   ambientLight!: THREE.AmbientLight;
   pointLight!: THREE.SpotLight;
   isHovered = false; 
+  sharedRenderer = new THREE.WebGLRenderer();
 
   ngOnInit(): void {
     if (this.images.length === 6) {
@@ -46,8 +47,9 @@ export class CubeComponent implements OnInit {
   }
 
   addRenderer(){
-    this.renderer = new THREE.WebGLRenderer({ alpha: true });
+    this.renderer = this.sharedRenderer;
     this.renderer.setSize(80, 80);
+    this.renderer.setClearColor('#000000', 0);
     this.rendererContainer.nativeElement.appendChild(this.renderer.domElement);
   }
 

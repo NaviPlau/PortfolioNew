@@ -214,6 +214,9 @@ a{
   width: 100%;
   @include display(flex, row, flex-start, center);
   gap: 10px;
+  span{
+    @include display(flex, row, center, center);
+  }
   &.light-icon {
     .icon {
       color: $light-normal;

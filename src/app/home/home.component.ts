@@ -25,8 +25,8 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  heroVisible = false;
-  aboutVisible = false;
+  heroVisible = true;
+  aboutVisible = true;
   skillsVisible = false;
   projectsVisible = false;
   referencesVisible = false;
