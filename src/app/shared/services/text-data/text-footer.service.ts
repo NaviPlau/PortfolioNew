@@ -13,8 +13,8 @@ export class TextFooterService {
     name : "Paul Ivan",
     job : "Fullstack Entwickler",
     location : {
-      title: "Linz Österreich",
-      map: "https://www.google.com/search?q=linz&oq=linz&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg8MgcIAhAuGIAEMg0IAxAuGMcBGNEDGIAEMgYIBBBFGDwyBggFEEUYQTIGCAYQRRg8MgYIBxBFGDzSAQc5NjlqMGo0qAIAsAIB&sourceid=chrome&ie=UTF-8"
+      title: "Langenstein Österreich",
+      map: "https://g.co/kgs/3xQqbVg"
     },
     copyright : "© 2025 Paul Ivan",
     links : {
@@ -39,8 +39,8 @@ export class TextFooterService {
     name : "Paul Ivan",
     job : "Fullstack Developer",
     location : {
-      title: "Linz Austria",
-      map: "https://www.google.com/search?q=linz&oq=linz&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg8MgcIAhAuGIAEMg0IAxAuGMcBGNEDGIAEMgYIBBBFGDwyBggFEEUYQTIGCAYQRRg8MgYIBxBFGDzSAQc5NjlqMGo0qAIAsAIB&sourceid=chrome&ie=UTF-8"
+      title: "Langenstein Austria",
+      map: "https://g.co/kgs/3xQqbVg"
     },
     copyright : "© 2025 Paul Ivan",
     links : {
