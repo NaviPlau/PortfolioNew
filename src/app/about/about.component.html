@@ -11,13 +11,16 @@
           </div>
           <div class="paragraph">
             <p>{{text.aboutSection().paragraphs.challenge}}</p>
-            <a href=""><app-head></app-head> </a>
+            <app-head></app-head>
           </div>
           <div class="paragraph">
             <p>{{text.aboutSection().paragraphs.checkmark}}</p>
-            <a href=""><app-checkmark></app-checkmark></a>
+            <app-checkmark></app-checkmark>
           </div>
-          <button (click)="videoService.videoOpen.set(true)" [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'"	>{{text.buttonText()}}</button>
+          @if(videoService.videoOpen()){
+            <button (click)="videoService.videoOpen.set(true)" [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'"	>{{text.buttonText()}}</button>
+          }
+          
         </div>
         
       </div>
