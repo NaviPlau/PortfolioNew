@@ -172,7 +172,7 @@ export class TextProjectsService {
         {
           id : 3,
           title: "EPL",
-          about : "El Polo Loco is a jump-and-run game with a focus on object-oriented programming—spiced up with a touch of Tabasco and a chicken theme..",
+          about : "El Polo Loco is a jump-and-run game with a focus on object-oriented programming—spiced up with a touch of Tabasco and a chicken theme.",
           process: "This project was my introduction to reusable code and structured code management.",
           challenge : "The biggest challenge was understanding class inheritance and figuring out which class needs what and how to use it effectively.",
           gitLink : "https://github.com/NaviPlau/ElPolloLoco",

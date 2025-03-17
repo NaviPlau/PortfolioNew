@@ -33,7 +33,7 @@ export class ContactComponent {
   fb = inject(FormBuilder);
 
   post = {
-    endPoint: 'https://second-portfolio.paul-ivan.com/sendMail.php',
+    endPoint: 'https://paul-ivan.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
