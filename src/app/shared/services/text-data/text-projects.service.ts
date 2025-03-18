@@ -6,10 +6,12 @@ import { LangService } from '../language/lang.service';
 })
 export class TextProjectsService {
 
-  constructor() { }
+  constructor() { 
+    setInterval(() => this.selectedProjectId.set(this.selectedProjectId() + 1), 5000);
+  }
 
   lang = inject(LangService)
-  
+  selectedFrontend = signal(true);
 
   projectText = computed(() => {
     const language = this.lang.language();

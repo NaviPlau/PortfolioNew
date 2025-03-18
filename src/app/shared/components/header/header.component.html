@@ -1,13 +1,13 @@
 <div class="header">
   <div class="icons">
-    <a href="https://github.com/NaviPlau" target="_blank" matTooltip="GitHub"> <app-hero-github class="svg" aria-label="Github"></app-hero-github></a>
-    <a href="mailto:info@paul-ivan.com" matTooltip="E-mail"><app-hero-email class="svg" aria-label="Email"></app-hero-email></a>
-    <a href="https://www.linkedin.com/in/paul-ivan-a87585328/" matTooltip="Linkedin" target="_blank"><app-hero-linked class="svg" aria-label="Linkedin"></app-hero-linked></a>
+    <a href="https://github.com/NaviPlau" target="_blank" matTooltip="GitHub"> <app-hero-github aria-label="Github"></app-hero-github></a>
+    <a href="mailto:info@paul-ivan.com" matTooltip="E-mail"><app-hero-email aria-label="Email"></app-hero-email></a>
+    <a href="https://www.linkedin.com/in/paul-ivan-a87585328/" matTooltip="Linkedin" target="_blank"><app-hero-linked  aria-label="Linkedin"></app-hero-linked></a>
     @if(lightmodus.light()){
-      <mat-icon class="light icon" matTooltip="Dark Mode" (click)="lightmodus.toggle()" aria-label="Switch to dark mode" >dark_mode</mat-icon>
+      <a ><mat-icon class="light icon" matTooltip="Dark Mode" (click)="lightmodus.toggle()" aria-label="Switch to dark mode" >dark_mode</mat-icon></a>
     
       }@else {
-      <mat-icon class="dark icon" matTooltip="Light Mode" (click)="lightmodus.toggle()" aria-label="Switch to light mode">light_mode</mat-icon>
+        <a ><mat-icon class="dark icon" matTooltip="Light Mode" (click)="lightmodus.toggle()" aria-label="Switch to light mode">light_mode</mat-icon></a>
       }
   </div>
 
@@ -16,7 +16,7 @@
 
   
 
-  <div style="color: transparent;">...</div>
+  <div style="color: transparent;">.</div>
 
   
 

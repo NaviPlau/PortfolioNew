@@ -1,36 +1,40 @@
 <section id="skills" [ngClass]="lightmodus.light() ? 'light-background' : 'dark-background'">
-  <div class="content" >
-
-    <div class="cubes-wrapper" #cube  (click)="$event.stopPropagation()">
-      @for(skill of (text.showFrontendSkills() ? skillCubesFrontend : skillCubesBackend); track skill ) {
-        <div class="cube">
-          <app-cube
-            (click)="showText((text.showFrontendSkills() ? skillCubesFrontend : skillCubesBackend).indexOf(skill))" 
-            [hoverLightColor]="lightmodus.light() ? '#89BCD9' : '#3dcfb6'" 
-            [images]="skill">
-          </app-cube>
-          <span   appAriaConverter>{{ (text.showFrontendSkills() ? imagesFrontend : imagesBackend)[(text.showFrontendSkills() ? skillCubesFrontend : skillCubesBackend).indexOf(skill)] }}</span>
-        </div>
-      }
-    </div>
-    
-    <div class="button-wrapper" #buttonWrap [ngClass]="lightmodus.light() ? 'border-light' : 'border-dark'">
-      <h1 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.skillsText().title}} </h1>
-      @if(shownText()){
-        <div  class="text" [appClickOutside]="hideText">
-          <span class="text-wrapper " appAriaConverter [ngClass]="lightmodus.light() ? 'light-icon' : 'dark-icon'"><span><mat-icon class="icon nowrap">fiber_manual_record</mat-icon></span>
-          {{shownText()}} </span>
-
-        </div>
-      }@else {
-        <div class="text" [appClickOutside]="hideText">
-          <span class="text-wrapper" appAriaConverter [ngClass]="lightmodus.light() ? 'light-icon' : 'dark-icon'"><span><mat-icon class="icon">fiber_manual_record</mat-icon></span>
-           {{text.skillsText().clickText}}</span>
-        </div>
-      }
-      <button appAriaConverter [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'" class="fs-18" (click)="toggleSkills()">{{text.skillsText().buttonText()}}</button>
-       
-    </div>
+  <div class="content">
+    <h1 [ngClass]="lightmodus.light() ? 'color-light' : 'color-dark'">{{text.skillsText().title}} </h1>
+    <div class="skills-wrapper">
+      <div class="skills">
+        @for(image of imagesFrontend; track image; let index = $index){
+          <img (click)="setFrontendText(index); $event.stopPropagation()" [appClickOutside]="hideText" [attr.aria-label]="image"
+               src="img/{{image.toLowerCase()}}.png" [attr.aria-label]="image">
+          
+          @if(showText().frontend === index){
+            <div class="image-text" [ngClass]="lightmodus.light() ? 'dark-background' : 'light-background'">
+              <img src="img/{{image.toLowerCase()}}.png" alt="">
+              <p>{{text.singleSkill().textFrontend[index]}}</p>
+            </div>
+          }
+          <span></span>
+        }
+      </div>
       
+      <div class="skills">
+        @for(image of imagesBackend; track image; let index = $index){
+          <img (click)="setBackendText(index); $event.stopPropagation()" [appClickOutside]="hideText" [attr.aria-label]="image"
+               src="img/{{image.toLowerCase()}}.png" [attr.aria-label]="image">
+          
+          @if(showText().backend === index){
+            <div class="image-text" [ngClass]="lightmodus.light() ? 'dark-background' : 'light-background'">
+              <img src="img/{{image.toLowerCase()}}.png" alt="">
+              <p>{{text.singleSkill().textBackend[index]}}</p>
+              
+            </div>
+          }
+          <span></span>
+        }
+        
+      </div>
+      
+     
+    </div>
   </div>
 </section>

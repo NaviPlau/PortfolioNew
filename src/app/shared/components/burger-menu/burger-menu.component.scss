@@ -26,6 +26,9 @@ header {
   transform: translateX(-50%); 
   margin: 0 auto;
   z-index: 15;
+  @media(min-width: 1800px){
+    max-width: 1800px;
+  }
 }
 
 
@@ -42,6 +45,10 @@ nav {
   z-index: 30;
   border: 2px solid black;
   border-radius: 5px;
+  @media(min-width: 1800px){
+    max-width: 400px;
+    gap: 20px;
+  }
 
 }
 
@@ -55,12 +62,18 @@ nav {
     font-size: 20px;
     font-weight: bold;
     color: #89BCD9 ;
+    @media(min-width: 1800px){
+      font-size: 36px;
+    }
   }
   mat-icon{
     transform-origin: center;
     height: auto;
     width: auto;
     font-size: 24px;
+    @media(min-width: 1800px){
+      font-size: 36px;
+    }
     &:hover{
       cursor: pointer;
       color: #89BCD9;
@@ -79,6 +92,9 @@ nav {
   font-size: 42px;
   cursor: pointer;
   z-index: 21;
+  @media(min-width: 1800px){
+    font-size: 72px !important;
+  }
 }
 
 .link-wrapper {
@@ -92,13 +108,19 @@ nav {
     font-size: 20px;
     height: auto;
     width: auto;
+    @media(min-width: 1800px){
+      font-size: 36px;
+    }
 
   }
-  a{
+  span{
     font-size: 20px;
     text-decoration: none;
     color: black;
     transition: 125ms;
+    @media(min-width: 1800px){
+      font-size: 32px;
+    }
   }
 }
 

@@ -16,19 +16,19 @@ export class ProjectsComponent {
   lightmodus = inject(LightDarkService);
   text = inject(TextProjectsService);
   renderer: Renderer2 = inject(Renderer2);
-  selectedFrontend = signal(true);
+
   scrollService = inject(ScrollIntoService);
 
   @ViewChild('project', { static: true }) project!: ElementRef;
   @ViewChild('title', { static: true }) title!: ElementRef
 
   selectBackend() {
-    this.selectedFrontend.set(false);
+    this.text.selectedFrontend.set(false);
     this.text.selectProject(4);
   }
 
   selectFrontend() {
-    this.selectedFrontend.set(true);
+    this.text.selectedFrontend.set(true);
     this.text.selectProject(1);
   }
 

@@ -11,6 +11,9 @@
   @media(max-width: 400px){
     padding: 10px 10px;
   }
+  @media(min-width: 1800px){
+    gap: 50px;
+  }
 }
 
 .text-area {
@@ -20,12 +23,20 @@
   @media(max-width: 800px){
     align-items: center;
   }
+  @media(min-width: 1800px){
+    font-size: 24px;
+    
+  }
 }
 
 .tech-img {
   height: 32px;
   width: 32px;
   object-fit: fill;
+  @media(min-width: 1800px){
+    height: 64px;
+    width: 64px;
+  }
 }
 
 .icon{
@@ -36,7 +47,12 @@
 
 .img-area {
   @include display(flex, column, center, center);
-  gap: 10px
+  gap: 10px;
+  @media(min-width: 1800px){
+    span{
+      font-size: 24px;
+    }
+  }
 }
 
 .project-img {
@@ -49,6 +65,10 @@
     width: 200px;
     height: 160px;
   }
+  @media(min-width: 1800px){
+    width: 500px;
+    height: 300px;
+  }
 }
 
 .tech-area {
@@ -60,11 +80,21 @@
 }
 
 button{
-  font-size: 16px;
+  font-size: 20px;
   padding: 4px 8px;
+  @media(min-width: 1800px){
+    font-size: 32px;
+    padding: 12px 8px;
+  }
+    
+  
 }
 
 .links{
   @include display(flex, row, center, center);
   gap: 10px;
+  @media(min-width: 1800px){
+    width: 100%;
+    justify-content: space-between;
+  }
 }
