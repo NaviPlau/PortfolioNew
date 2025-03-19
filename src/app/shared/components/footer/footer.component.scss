@@ -15,6 +15,10 @@ footer{
   margin: 0 auto;
   padding: 20px 20px;
   font-family: 'hero', serif;
+  @media(min-width: 1800px){
+    max-width: 1800px;
+    font-size: 24px;
+  }
 }
 
 .info, .links{

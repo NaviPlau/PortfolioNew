@@ -18,7 +18,11 @@ section {
   max-width: 1440px;
   margin: 0 auto;
   padding: 100px 60px 60px 20px ;
-  gap: 30px
+  gap: 30px;
+  @media(min-width: 1800px){
+    max-width: 1800px;
+    padding-top: 120px;
+  }
 }
 
 .arrow{
@@ -30,6 +34,9 @@ section {
   border-radius: 20px;
   padding: 4px 12px ;
   animation: move-left 2s ease-in-out infinite;
+  @media(min-width: 1800px){
+    font-size: 36px;
+  }
 }
 
 .title-wrapper{
@@ -39,8 +46,6 @@ section {
 }
 
 h1{
-  font-size: 56px;
-  line-height: 56px;
   @media(max-width:550px){
     font-size: 32px;
     line-height: 32px;
@@ -64,6 +69,9 @@ h3{
     font-size: 16px;
     padding-left: 10px;
   }
+  @media(min-width: 1800px){
+    font-size: 24px;
+  }
 }
 
 h2{
@@ -71,12 +79,18 @@ h2{
   @media(max-width:550px){
     font-size: 18px;;
   }
+  @media(min-width: 1800px){
+    font-size: 36px;
+  }
 }
 
 ul{
   margin-left: 60px;
   @media(max-width:550px){
     margin-left: 40px;
+  }
+  @media(min-width: 1800px){
+    font-size: 24px;
   }
 }
 
@@ -88,5 +102,8 @@ ul{
   padding-left: 20px;
   @media(max-width:550px){
     padding-left: 10px;
+  }
+  @media(min-width: 1800px){
+    font-size: 24px;
   }
 }

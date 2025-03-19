@@ -4,25 +4,25 @@
     <div class="full-project" #project>
       <div class="buttons-wrapper">
         <div class="dev-type" [ngClass]="{
-          'border-light-reverse': lightmodus.light() && selectedFrontend(),
-          'border-dark-reverse': !lightmodus.light() && selectedFrontend(),
-          'border-light': lightmodus.light() && !selectedFrontend(),
-          'border-dark': !lightmodus.light() && !selectedFrontend()
+          'border-light-reverse': lightmodus.light() && text.selectedFrontend(),
+          'border-dark-reverse': !lightmodus.light() && text.selectedFrontend(),
+          'border-light': lightmodus.light() && !text.selectedFrontend(),
+          'border-dark': !lightmodus.light() && !text.selectedFrontend()
         }" (click)="selectFrontend()">
           Frontend
         </div>
         <div class="dev-type" [ngClass]="{
-          'border-light-reverse': lightmodus.light() && !selectedFrontend(),
-          'border-dark-reverse': !lightmodus.light() && !selectedFrontend(),
-          'border-light': lightmodus.light() && selectedFrontend(),
-          'border-dark': !lightmodus.light() && selectedFrontend()
+          'border-light-reverse': lightmodus.light() && !text.selectedFrontend(),
+          'border-dark-reverse': !lightmodus.light() && !text.selectedFrontend(),
+          'border-light': lightmodus.light() && text.selectedFrontend(),
+          'border-dark': !lightmodus.light() && text.selectedFrontend()
         }" (click)="selectBackend()">
           Backend
         </div>
       </div>
 
       <div class="project">
-        @if(selectedFrontend()) {
+        @if(text.selectedFrontend()) {
         @for(project of text.frontendProjects(); track project) {
         <div class="single-project" [ngClass]="{
               'border-light-reverse': lightmodus.light() && text.selectedProjectId() === project.id,

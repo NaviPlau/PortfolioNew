@@ -4,37 +4,42 @@
     <div class="skills-wrapper">
       <div class="skills">
         @for(image of imagesFrontend; track image; let index = $index){
-          <img (click)="setFrontendText(index); $event.stopPropagation()" [appClickOutside]="hideText" [attr.aria-label]="image"
-               src="img/{{image.toLowerCase()}}.png" [attr.aria-label]="image">
-          
-          @if(showText().frontend === index){
-            <div class="image-text" [ngClass]="lightmodus.light() ? 'dark-background' : 'light-background'">
-              <img src="img/{{image.toLowerCase()}}.png" alt="">
-              <p>{{text.singleSkill().textFrontend[index]}}</p>
-            </div>
-          }
-          <span></span>
+        <div class="img-wrapper">
+          <img (click)="setFrontendText(index); $event.stopPropagation()" [appClickOutside]="hideText"
+            [attr.aria-label]="image" src="img/{{image.toLowerCase()}}.png" [attr.aria-label]="image">
+          <p>{{image}}</p>
+        </div>
+
+        @if(showText().frontend === index){
+        <div class="image-text" [ngClass]="lightmodus.light() ? 'dark-background' : 'light-background'">
+          <img src="img/{{image.toLowerCase()}}.png" alt="">
+          <p>{{text.singleSkill().textFrontend[index]}}</p>
+        </div>
+        }
+        <span></span>
         }
       </div>
-      
+
       <div class="skills">
         @for(image of imagesBackend; track image; let index = $index){
-          <img (click)="setBackendText(index); $event.stopPropagation()" [appClickOutside]="hideText" [attr.aria-label]="image"
-               src="img/{{image.toLowerCase()}}.png" [attr.aria-label]="image">
-          
-          @if(showText().backend === index){
-            <div class="image-text" [ngClass]="lightmodus.light() ? 'dark-background' : 'light-background'">
-              <img src="img/{{image.toLowerCase()}}.png" alt="">
-              <p>{{text.singleSkill().textBackend[index]}}</p>
-              
-            </div>
-          }
-          <span></span>
+        <div class="img-wrapper">
+          <img (click)="setBackendText(index); $event.stopPropagation()" [appClickOutside]="hideText"
+            [attr.aria-label]="image" src="img/{{image.toLowerCase()}}.png" [attr.aria-label]="image">
+          <p>{{image}}</p>
+        </div>
+        @if(showText().backend === index){
+        <div class="image-text" [ngClass]="lightmodus.light() ? 'dark-background' : 'light-background'">
+          <img src="img/{{image.toLowerCase()}}.png" alt="">
+          <p>{{text.singleSkill().textBackend[index]}}</p>
+
+        </div>
         }
-        
+        <span></span>
+        }
+
       </div>
-      
-     
+
+
     </div>
   </div>
 </section>

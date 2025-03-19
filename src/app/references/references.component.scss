@@ -17,6 +17,9 @@ section {
   max-width: 1440px;
   margin: 0 auto;
   padding: 40px 20px;
+  @media(min-width: 1800px){
+    max-width: 1800px;
+  }
   
 }
 
@@ -27,7 +30,7 @@ section {
   scrollbar-width: 3px !important;
   width: 100%;
   gap: 30px;
-  padding: 10px 10px;
+  padding: 40px 10px;
   opacity: 0;
 }
 

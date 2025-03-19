@@ -84,7 +84,7 @@ button{
   padding: 4px 8px;
   @media(min-width: 1800px){
     font-size: 32px;
-    padding: 12px 8px;
+    padding: 16px 20px;
   }
     
   
@@ -96,5 +96,6 @@ button{
   @media(min-width: 1800px){
     width: 100%;
     justify-content: space-between;
+    padding: 10px;
   }
 }
