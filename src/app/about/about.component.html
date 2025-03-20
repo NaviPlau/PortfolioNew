@@ -17,9 +17,6 @@
             <p>{{text.aboutSection().paragraphs.checkmark}}</p>
             <app-checkmark></app-checkmark>
           </div>
-          @if(videoService.videoOpen()){
-            <button (click)="videoService.videoOpen.set(true)" [ngClass]="lightmodus.light() ? 'light-mode' : 'dark-mode'"	>{{text.buttonText()}}</button>
-          }
           
         </div>
         
@@ -31,7 +28,4 @@
       <div class="stripe-overlay" [ngClass]="lightmodus.light() ? 'overlay-light' : 'overlay-dark'"></div>
     </div>
   </div>
-  @if(videoService.videoOpen()){
-    <app-video></app-video>
-  }
 </section>

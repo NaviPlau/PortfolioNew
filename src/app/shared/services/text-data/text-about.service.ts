@@ -28,18 +28,4 @@ export class TextAboutService {
     }
   }))
 
-
-  videoData = computed(() => this.lang.language() === 'de' ? 'assets/videos/paul.mp4' : 'assets/videos/paul-en.mp4')
-  videoInfo = computed(() => this.lang.language() === 'de' ? {
-    title: "Das bin ich",
-    subtitle: "Paul Ivan",
-    description: "Hier können sie mich besser  kennenlernen und ein rundgang ein Paar meiner Projekte",
-    controls: ['Abspielen', 'Schließen']
-  } : {
-    title: "Meet me",
-    subtitle: "Paul Ivan",
-    description: "Here you get a peek at who i am and a few of my projects",
-    controls: ['Play', 'Close']
-  }
-  )
 }

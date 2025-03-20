@@ -1,20 +1,17 @@
 import { Component, computed, ElementRef, inject, Renderer2, viewChild, ViewChild } from '@angular/core';
-import { LangService } from '../shared/services/language/lang.service';
 import { LightDarkService } from '../shared/services/lightmodus/light-dark.service';
 import { CommonModule } from '@angular/common';
-import { first } from 'rxjs';
 import { ScrollIntoService } from '../shared/services/scroll-view/scroll-into.service';
 import { LocationComponent } from "../shared/svg/location/location.component";
 import { HeadComponent } from "../shared/svg/head/head.component";
 import { CheckmarkComponent } from "../shared/svg/checkmark/checkmark.component";
-import { VideoComponent } from "./videoplayer/video/video.component";
 import { VideoService } from '../shared/services/video-service/video.service';
 import { TextAboutService } from '../shared/services/text-data/text-about.service';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, LocationComponent, HeadComponent, CheckmarkComponent, VideoComponent],
+  imports: [CommonModule, LocationComponent, HeadComponent, CheckmarkComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
